@@ -498,7 +498,7 @@ A/Web/*/utoTest.Net/
 
 # content below from: https://github.com/github/gitignore/blob/master/Global/macOS.gitignore
 # General
-/Web/*/.DS_Store
+/*/.DS_Store
 /Web/*/.AppleDouble
 /Web/*/.LSOverride
 
