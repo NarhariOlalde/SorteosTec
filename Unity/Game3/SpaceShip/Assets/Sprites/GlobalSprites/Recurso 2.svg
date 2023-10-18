@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="uuid-6a79393c-0148-4c6a-bb0a-3c9f1a2f20f2" data-name="Capa 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82.41 65.94">
+  <defs>
+    <style>
+      .uuid-e5badd74-4cad-4cb6-ac95-ec0cea22b224 {
+        fill: #eae8fc;
+      }
+
+      .uuid-811dda3a-a9c9-4981-b997-beb3f21e991e {
+        fill: #fff;
+      }
+
+      .uuid-63155a07-705e-4bed-9fc4-aad5b210752f {
+        fill: #8e8ec7;
+      }
+
+      .uuid-9092f06a-9886-4a29-9c13-73b2d652375a {
+        fill: #c0c0f3;
+      }
+
+      .uuid-78ac6d6e-3b93-4eb9-9643-a549d2ead6aa {
+        fill: #dbd7fc;
+      }
+
+      .uuid-675a2e86-8ab1-4fce-8698-c674e20140d0 {
+        fill: #9a9ae6;
+      }
+
+      .uuid-7ec15261-45dd-433f-8af4-d2e1a89cf19a {
+        fill: #473d61;
+      }
+    </style>
+  </defs>
+  <g id="uuid-3ee245f0-ec3d-4908-a36d-a0487e08d292" data-name="OBJECTS">
+    <g>
+      <g>
+        <polygon class="uuid-675a2e86-8ab1-4fce-8698-c674e20140d0" points="71.43 16.49 71.43 10.99 65.93 10.99 65.93 16.49 60.44 16.49 54.94 16.49 54.94 10.99 49.45 10.99 49.45 16.49 43.95 16.49 38.46 16.49 32.96 16.49 32.96 10.99 27.47 10.99 27.47 16.49 21.97 16.49 21.97 16.49 16.48 16.49 10.99 16.49 5.49 16.49 5.49 21.98 10.99 21.98 16.48 21.98 21.97 21.98 21.97 21.98 27.47 21.98 32.96 21.98 38.46 21.98 43.95 21.98 49.45 21.98 49.45 21.98 54.94 21.98 60.44 21.98 65.93 21.98 71.43 21.98 76.92 21.98 76.92 16.49 71.43 16.49"/>
+        <rect class="uuid-675a2e86-8ab1-4fce-8698-c674e20140d0" x="54.94" y="5.5" width="5.5" height="5.49"/>
+        <polygon class="uuid-675a2e86-8ab1-4fce-8698-c674e20140d0" points="38.46 27.48 38.46 32.97 38.46 38.47 38.46 43.96 38.46 49.45 38.46 54.95 38.46 60.44 43.95 60.44 43.95 54.95 43.95 49.45 43.95 43.96 43.95 38.47 43.95 32.97 43.95 27.48 43.95 21.98 38.46 21.98 38.46 27.48"/>
+        <rect class="uuid-675a2e86-8ab1-4fce-8698-c674e20140d0" x="38.46" y="5.5" width="5.49" height="5.49"/>
+        <rect class="uuid-675a2e86-8ab1-4fce-8698-c674e20140d0" x="21.97" y="5.5" width="5.5" height="5.49"/>
+        <rect class="uuid-675a2e86-8ab1-4fce-8698-c674e20140d0" x="10.99" y="10.99" width="5.49" height="5.5"/>
+      </g>
+      <rect class="uuid-9092f06a-9886-4a29-9c13-73b2d652375a" x="60.44" y="27.48" width="5.49" height="5.49"/>
+      <rect class="uuid-9092f06a-9886-4a29-9c13-73b2d652375a" x="54.94" y="38.47" width="5.5" height="5.49"/>
+      <rect class="uuid-811dda3a-a9c9-4981-b997-beb3f21e991e" x="54.94" y="21.98" width="5.5" height="5.5"/>
+      <rect class="uuid-9092f06a-9886-4a29-9c13-73b2d652375a" x="49.45" y="38.47" width="5.49" height="5.49"/>
+      <rect class="uuid-811dda3a-a9c9-4981-b997-beb3f21e991e" x="49.45" y="5.5" width="5.49" height="5.49"/>
+      <g>
+        <polygon class="uuid-e5badd74-4cad-4cb6-ac95-ec0cea22b224" points="71.43 21.98 65.93 21.98 60.44 21.98 54.94 21.98 49.45 21.98 43.95 21.98 43.95 27.48 43.95 32.97 43.95 38.47 43.95 43.96 43.95 49.45 43.95 54.95 49.45 54.95 49.45 49.45 54.94 49.45 54.94 43.96 60.44 43.96 60.44 38.47 65.93 38.47 65.93 32.97 71.43 32.97 71.43 27.48 76.92 27.48 76.92 21.98 71.43 21.98"/>
+        <polygon class="uuid-e5badd74-4cad-4cb6-ac95-ec0cea22b224" points="60.44 16.49 65.93 16.49 65.93 10.99 65.93 5.5 60.44 5.5 60.44 10.99 54.94 10.99 54.94 16.49 60.44 16.49"/>
+        <polygon class="uuid-e5badd74-4cad-4cb6-ac95-ec0cea22b224" points="49.45 16.49 49.45 10.99 54.94 10.99 54.94 5.5 49.45 5.5 43.95 5.5 43.95 10.99 38.46 10.99 38.46 5.5 32.96 5.5 27.47 5.5 27.47 10.99 32.96 10.99 32.96 16.49 38.46 16.49 43.95 16.49 49.45 16.49"/>
+        <polygon class="uuid-e5badd74-4cad-4cb6-ac95-ec0cea22b224" points="27.47 21.98 21.97 21.98 16.48 21.98 10.99 21.98 5.49 21.98 5.49 27.48 10.99 27.48 10.99 32.97 16.48 32.97 16.48 38.47 21.97 38.47 21.97 43.96 27.47 43.96 27.47 49.45 32.96 49.45 32.96 54.95 38.46 54.95 38.46 49.45 38.46 43.96 38.46 38.47 38.46 32.97 38.46 27.48 38.46 21.98 32.96 21.98 27.47 21.98"/>
+        <polygon class="uuid-e5badd74-4cad-4cb6-ac95-ec0cea22b224" points="21.97 5.5 16.48 5.5 16.48 10.99 16.48 16.49 21.97 16.49 27.47 16.49 27.47 10.99 21.97 10.99 21.97 5.5"/>
+      </g>
+      <rect class="uuid-811dda3a-a9c9-4981-b997-beb3f21e991e" x="32.96" y="10.99" width="5.5" height="5.5"/>
+      <rect class="uuid-9092f06a-9886-4a29-9c13-73b2d652375a" x="32.96" y="5.5" width="5.5" height="5.49"/>
+      <rect class="uuid-811dda3a-a9c9-4981-b997-beb3f21e991e" x="27.47" y="43.96" width="5.49" height="5.49"/>
+      <rect class="uuid-9092f06a-9886-4a29-9c13-73b2d652375a" x="27.47" y="32.97" width="5.49" height="5.5"/>
+      <rect class="uuid-811dda3a-a9c9-4981-b997-beb3f21e991e" x="27.47" y="27.48" width="5.49" height="5.49"/>
+      <rect class="uuid-811dda3a-a9c9-4981-b997-beb3f21e991e" x="21.97" y="38.47" width="5.5" height="5.49"/>
+      <rect class="uuid-811dda3a-a9c9-4981-b997-beb3f21e991e" x="16.48" y="32.97" width="5.49" height="5.5"/>
+      <g>
+        <rect class="uuid-78ac6d6e-3b93-4eb9-9643-a549d2ead6aa" x="71.43" y="21.98" width="5.49" height="5.5"/>
+        <rect class="uuid-78ac6d6e-3b93-4eb9-9643-a549d2ead6aa" x="65.93" y="27.48" width="5.5" height="5.49"/>
+        <rect class="uuid-78ac6d6e-3b93-4eb9-9643-a549d2ead6aa" x="60.44" y="21.98" width="5.49" height="5.5"/>
+        <rect class="uuid-78ac6d6e-3b93-4eb9-9643-a549d2ead6aa" x="60.44" y="10.99" width="5.49" height="5.5"/>
+        <rect class="uuid-78ac6d6e-3b93-4eb9-9643-a549d2ead6aa" x="54.94" y="32.97" width="5.5" height="5.5"/>
+        <polygon class="uuid-78ac6d6e-3b93-4eb9-9643-a549d2ead6aa" points="49.45 27.48 49.45 21.98 43.95 21.98 43.95 27.48 43.95 32.97 43.95 38.47 43.95 43.96 49.45 43.96 49.45 38.47 49.45 32.97 54.94 32.97 54.94 27.48 49.45 27.48"/>
+        <rect class="uuid-78ac6d6e-3b93-4eb9-9643-a549d2ead6aa" x="43.95" y="49.45" width="5.5" height="5.5"/>
+        <rect class="uuid-78ac6d6e-3b93-4eb9-9643-a549d2ead6aa" x="43.95" y="10.99" width="5.5" height="5.5"/>
+        <rect class="uuid-78ac6d6e-3b93-4eb9-9643-a549d2ead6aa" x="32.96" y="43.96" width="5.5" height="5.49"/>
+        <rect class="uuid-78ac6d6e-3b93-4eb9-9643-a549d2ead6aa" x="27.47" y="5.5" width="5.49" height="5.49"/>
+        <rect class="uuid-78ac6d6e-3b93-4eb9-9643-a549d2ead6aa" x="21.97" y="10.99" width="5.5" height="5.5"/>
+        <rect class="uuid-78ac6d6e-3b93-4eb9-9643-a549d2ead6aa" x="16.48" y="27.48" width="5.49" height="5.49"/>
+      </g>
+      <g>
+        <polygon class="uuid-63155a07-705e-4bed-9fc4-aad5b210752f" points="71.43 16.49 71.43 10.99 65.93 10.99 65.93 16.49 60.44 16.49 54.94 16.49 49.45 16.49 49.45 21.98 54.94 21.98 60.44 21.98 65.93 21.98 71.43 21.98 76.92 21.98 76.92 16.49 71.43 16.49"/>
+        <rect class="uuid-63155a07-705e-4bed-9fc4-aad5b210752f" x="60.44" y="32.97" width="5.49" height="5.5"/>
+        <rect class="uuid-63155a07-705e-4bed-9fc4-aad5b210752f" x="49.45" y="43.96" width="5.49" height="5.49"/>
+        <rect class="uuid-63155a07-705e-4bed-9fc4-aad5b210752f" x="38.46" y="38.47" width="5.49" height="5.49"/>
+        <rect class="uuid-63155a07-705e-4bed-9fc4-aad5b210752f" x="38.46" y="21.98" width="5.49" height="5.5"/>
+        <rect class="uuid-63155a07-705e-4bed-9fc4-aad5b210752f" x="16.48" y="16.49" width="5.49" height="5.49"/>
+      </g>
+      <rect class="uuid-811dda3a-a9c9-4981-b997-beb3f21e991e" x="16.48" y="5.5" width="5.49" height="5.49"/>
+      <rect class="uuid-811dda3a-a9c9-4981-b997-beb3f21e991e" x="10.99" y="27.48" width="5.49" height="5.49"/>
+      <rect class="uuid-811dda3a-a9c9-4981-b997-beb3f21e991e" x="5.49" y="21.98" width="5.5" height="5.5"/>
+      <g>
+        <polygon class="uuid-7ec15261-45dd-433f-8af4-d2e1a89cf19a" points="76.92 16.49 76.92 21.98 76.92 27.48 82.41 27.48 82.41 21.98 82.41 16.49 76.92 16.49"/>
+        <rect class="uuid-7ec15261-45dd-433f-8af4-d2e1a89cf19a" x="71.43" y="27.48" width="5.49" height="5.49"/>
+        <rect class="uuid-7ec15261-45dd-433f-8af4-d2e1a89cf19a" x="65.93" y="32.97" width="5.5" height="5.5"/>
+        <rect class="uuid-7ec15261-45dd-433f-8af4-d2e1a89cf19a" x="60.44" y="38.47" width="5.49" height="5.49"/>
+        <rect class="uuid-7ec15261-45dd-433f-8af4-d2e1a89cf19a" x="54.94" y="43.96" width="5.5" height="5.49"/>
+        <rect class="uuid-7ec15261-45dd-433f-8af4-d2e1a89cf19a" x="49.45" y="49.45" width="5.49" height="5.5"/>
+        <rect class="uuid-7ec15261-45dd-433f-8af4-d2e1a89cf19a" x="43.95" y="54.95" width="5.5" height="5.49"/>
+        <rect class="uuid-7ec15261-45dd-433f-8af4-d2e1a89cf19a" x="38.46" y="60.44" width="5.49" height="5.5"/>
+        <rect class="uuid-7ec15261-45dd-433f-8af4-d2e1a89cf19a" x="32.96" y="54.95" width="5.5" height="5.49"/>
+        <rect class="uuid-7ec15261-45dd-433f-8af4-d2e1a89cf19a" x="27.47" y="49.45" width="5.49" height="5.5"/>
+        <rect class="uuid-7ec15261-45dd-433f-8af4-d2e1a89cf19a" x="21.97" y="43.96" width="5.5" height="5.49"/>
+        <rect class="uuid-7ec15261-45dd-433f-8af4-d2e1a89cf19a" x="16.48" y="38.47" width="5.49" height="5.49"/>
+        <rect class="uuid-7ec15261-45dd-433f-8af4-d2e1a89cf19a" x="10.99" y="32.97" width="5.49" height="5.5"/>
+        <rect class="uuid-7ec15261-45dd-433f-8af4-d2e1a89cf19a" x="5.49" y="27.48" width="5.5" height="5.49"/>
+        <polygon class="uuid-7ec15261-45dd-433f-8af4-d2e1a89cf19a" points="5.49 16.49 0 16.49 0 21.98 0 27.48 5.49 27.48 5.49 21.98 5.49 16.49"/>
+        <rect class="uuid-7ec15261-45dd-433f-8af4-d2e1a89cf19a" x="5.49" y="10.99" width="5.5" height="5.5"/>
+        <rect class="uuid-7ec15261-45dd-433f-8af4-d2e1a89cf19a" x="71.43" y="10.99" width="5.49" height="5.5"/>
+        <rect class="uuid-7ec15261-45dd-433f-8af4-d2e1a89cf19a" x="65.93" y="5.5" width="5.5" height="5.49"/>
+        <rect class="uuid-7ec15261-45dd-433f-8af4-d2e1a89cf19a" x="10.99" y="5.5" width="5.49" height="5.49"/>
+        <polygon class="uuid-7ec15261-45dd-433f-8af4-d2e1a89cf19a" points="27.47 5.5 32.96 5.5 38.46 5.5 43.95 5.5 49.45 5.5 54.94 5.5 60.44 5.5 65.93 5.5 65.93 0 60.44 0 54.94 0 49.45 0 43.95 0 38.46 0 32.96 0 27.47 0 21.97 0 16.48 0 16.48 5.5 21.97 5.5 27.47 5.5"/>
+      </g>
+    </g>
+  </g>
+</svg>
