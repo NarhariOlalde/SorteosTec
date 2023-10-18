@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 4868e07acf2c8de41966960faad1e620
+  - enabled: 1
     path: Assets/Scenes/SpaceGameScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/FruitBasket.unity
+    guid: 6d39640d8e1de6c41b9754051d6fb53e
   m_configObjects: {}
