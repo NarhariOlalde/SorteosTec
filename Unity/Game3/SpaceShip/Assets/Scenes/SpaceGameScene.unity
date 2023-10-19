@@ -529,6 +529,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc51273749f2e4d918de05a9cc641048, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullet: {fileID: 7856464379345925011, guid: 6076c1c36fd907548b45760df202ea95, type: 3}
+  shooter: {fileID: 0}
   moveSpeed: 10
 --- !u!70 &525876165
 CapsuleCollider2D:
@@ -591,7 +593,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &525876167
 BoxCollider2D:
   m_ObjectHideFlags: 0
