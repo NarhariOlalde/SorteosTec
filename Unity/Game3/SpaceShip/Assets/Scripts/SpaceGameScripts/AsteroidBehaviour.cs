@@ -28,10 +28,15 @@ public class AsteroidBehaviour : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+	Debug.Log("Collision");
         if (collision.gameObject.CompareTag("Player"))
         {
             GameObject.Destroy(this.gameObject);
         }
+	else if (collision.gameObject.CompareTag("Bullet"))
+	{
+            GameObject.Destroy(this.gameObject);
+	}
     }
 
 
