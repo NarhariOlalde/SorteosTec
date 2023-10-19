@@ -539,7 +539,7 @@ CapsuleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 525876161}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -601,7 +601,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 525876161}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -898,8 +898,8 @@ MonoBehaviour:
   asteroid_big: {fileID: 5268026660933505722, guid: dfca7499571034f0a96b163e69121590, type: 3}
   maxWidth: 10
   minWidth: -10
-  timeToSpawnMin: 0.5
-  timeToSpawnMax: 2
+  timeToSpawnMin: 0.1
+  timeToSpawnMax: 0.1
   smallAsteroidChance: 0.6
   mediumAsteroidChance: 0.3
   bigAsteroidChance: 0.1
