@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class AsteroidBehaviour : MonoBehaviour
 {
+    public int asteroidType;
+    public int health;
+
     public float velocity;
 
     Vector2 limit;
@@ -24,6 +27,11 @@ public class AsteroidBehaviour : MonoBehaviour
         {
             GameObject.Destroy(this.gameObject);
         }
+
+	if (health <= 0)
+	{
+	    GameObject.Destroy(this.gameObject);
+	}
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -35,9 +43,10 @@ public class AsteroidBehaviour : MonoBehaviour
         }
 	else if (collision.gameObject.CompareTag("Bullet"))
 	{
-            GameObject.Destroy(this.gameObject);
+            Debug.Log("Collision Bullet");
+	    health -= 50;
+	    Debug.Log(health);
+            //GameObject.Destroy(this.gameObject);
 	}
     }
-
-
 }

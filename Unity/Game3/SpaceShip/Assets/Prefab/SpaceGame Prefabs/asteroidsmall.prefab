@@ -133,4 +133,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d895e1ed78e148ab856ae368d4da9b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  asteroidType: 0
+  health: 50
   velocity: 5

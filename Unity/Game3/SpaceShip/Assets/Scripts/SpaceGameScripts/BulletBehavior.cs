@@ -15,7 +15,7 @@ public class BulletBehavior : MonoBehaviour
     void Update()
     {
         this.transform.position += Vector3.up * Time.deltaTime * velocity;
-        if (transform.position.y > 8)
+        if (transform.position.y > 6)
         {
             GameObject.Destroy(this.gameObject);
         }

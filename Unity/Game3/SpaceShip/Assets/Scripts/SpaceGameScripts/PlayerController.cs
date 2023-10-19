@@ -26,14 +26,14 @@ public class PlayerController : MonoBehaviour
             horizontalInput = 1; // Move right
         }
 
-	if (Input.GetKeyDown(KeyCode.Space))
-        {
-            
-        	//this.transform.position += Vector3.down * Time.deltaTime * velocity;
-		Instantiate(bullet, new Vector3(transform.position.x,
-                	transform.position.y+0.1f, 0), Quaternion.identity);
+	//if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    
+        //	//this.transform.position += Vector3.down * Time.deltaTime * velocity;
+	//	Instantiate(bullet, new Vector3(transform.position.x,
+        //        	transform.position.y+0.1f, 0), Quaternion.identity);
 
-        }
+        //}
 
         Vector2 moveDirection = new Vector2(horizontalInput, 0);
         transform.Translate(moveDirection * moveSpeed * Time.deltaTime);
