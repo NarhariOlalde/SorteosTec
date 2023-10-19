@@ -1,0 +1,222 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+/* Variables para colores principales */
+:root {
+    /*    33 52 132*/
+    --color-primario: #213484; /* Color principal */
+    --color-secundario: #6c757d; /* Color secundario */
+    --color-exito: #28a745; /* Color de éxito */
+    --color-error: #dc3545; /* Color de error */
+    --color-advertencia: #ffc107; /* Color de advertencia */
+    --color-informativo: #17a2b8; /* Color informativo */
+    --color-claro: #f8f9fa; /* Color claro */
+    --color-oscuro: #343a40; /* Color oscuro */
+
+
+    --fuente-principal: 'Bebas Neue', sans-serif; /* Fuente principal */
+    --fuente-secundaria: 'Montserrat', sans-serif; /* Fuente secundaria */
+}
+
+/* BOOTSTRAP */
+/* Fuentes*/
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--fuente-principal);
+}
+
+body, p, a, li, span, div {
+    font-family: var(--fuente-secundaria);
+}
+
+
+/* Colores de fondo */
+.bg-primary {
+    background-color: var(--color-primario) !important;
+}
+
+.bg-secondary {
+    background-color: var(--color-secundario) !important;
+}
+
+.bg-success {
+    background-color: var(--color-exito) !important;
+}
+
+.bg-danger {
+    background-color: var(--color-error) !important;
+}
+
+.bg-warning {
+    background-color: var(--color-advertencia) !important;
+}
+
+.bg-info {
+    background-color: var(--color-informativo) !important;
+}
+
+.bg-light {
+    background-color: var(--color-claro) !important;
+}
+
+.bg-dark {
+    background-color: var(--color-oscuro) !important;
+}
+
+/* Colores de texto */
+.text-primary {
+    color: var(--color-primario) !important;
+}
+
+.text-secondary {
+    color: var(--color-secundario) !important;
+}
+
+.text-success {
+    color: var(--color-exito) !important;
+}
+
+.text-danger {
+    color: var(--color-error) !important;
+}
+
+.text-warning {
+    color: var(--color-advertencia) !important;
+}
+
+.text-info {
+    color: var(--color-informativo) !important;
+}
+
+.text-light {
+    color: var(--color-claro) !important;
+}
+
+.text-dark {
+    color: var(--color-oscuro) !important;
+}
+
+/* Botones */
+.btn-primary {
+    background-color: var(--color-primario) !important;
+}
+
+.btn-secondary {
+    background-color: var(--color-secundario) !important;
+}
+
+.btn-success {
+    background-color: var(--color-exito) !important;
+}
+
+.btn-danger {
+    background-color: var(--color-error) !important;
+}
+
+.btn-warning {
+    background-color: var(--color-advertencia) !important;
+}
+
+.btn-info {
+    background-color: var(--color-informativo) !important;
+}
+
+.btn-light {
+    background-color: var(--color-claro) !important;
+}
+
+.btn-dark {
+    background-color: var(--color-oscuro) !important;
+}
+
+/* Bordes */
+.border-primary {
+    border-color: var(--color-primario) !important;
+}
+
+.border-secondary {
+    border-color: var(--color-secundario) !important;
+}
+
+.border-success {
+    border-color: var(--color-exito) !important;
+}
+
+.border-danger {
+    border-color: var(--color-error) !important;
+}
+
+.border-warning {
+    border-color: var(--color-advertencia) !important;
+}
+
+.border-info {
+    border-color: var(--color-informativo) !important;
+}
+
+.border-light {
+    border-color: var(--color-claro) !important;
+}
+
+.border-dark {
+    border-color: var(--color-oscuro) !important;
+}
+
+/* Alertas */
+.alert-primary {
+    background-color: var(--color-primario) !important;
+}
+
+.alert-secondary {
+    background-color: var(--color-secundario) !important;
+}
+
+.alert-success {
+    background-color: var(--color-exito) !important;
+}
+
+.alert-danger {
+    background-color: var(--color-error) !important;
+}
+
+.alert-warning {
+    background-color: var(--color-advertencia) !important;
+}
+
+.alert-info {
+    background-color: var(--color-informativo) !important;
+}
+
+.alert-light {
+    background-color: var(--color-claro) !important;
+}
+
+.alert-dark {
+    background-color: var(--color-oscuro) !important;
+}
+
+/* CUSTOM */
+
+.principal-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 83vh;
+    padding: 45px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}

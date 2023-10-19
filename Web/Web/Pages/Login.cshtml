@@ -1,0 +1,29 @@
+﻿@page
+@model Web.Pages.Shared.LoginModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="principal-content">
+
+    <div class="text-center">
+        <h1 class="display-4">Inicio de sesión</h1>
+        <form class="row gx-3 gy-2 align-items-center">
+            <div class="col-sm-6">
+                <label class="visually-hidden" for="specificSizeInputGroupUsername">Username</label>
+                <div class="input-group">
+                    <div class="input-group-text">@@</div>
+                    <input type="text" class="form-control" id="specificSizeInputGroupUsername" placeholder="Username" required>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <label class="visually-hidden" for="specificSizeInputName">Name</label>
+                <input type="password" class="form-control" id="specificSizeInputName" placeholder="Password" required>
+            </div>
+            <div class="col">
+                <button type="submit" class="btn btn-primary w-100">Enviar</button>
+            </div>
+        </form>
+    </div>
+
+</div>
