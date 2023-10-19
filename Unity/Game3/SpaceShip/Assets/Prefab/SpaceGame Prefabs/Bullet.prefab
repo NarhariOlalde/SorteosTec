@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 6980220212972296206}
   - component: {fileID: 9118571879222991194}
   - component: {fileID: 4232440045193359003}
-  - component: {fileID: 7449716139680409297}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Player
@@ -173,16 +172,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: 10
---- !u!114 &7449716139680409297
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7856464379345925011}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8edaa661a8e15a75e8c4d321dc3e3982, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneradius: 15

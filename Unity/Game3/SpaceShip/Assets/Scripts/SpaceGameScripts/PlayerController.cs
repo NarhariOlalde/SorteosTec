@@ -6,7 +6,6 @@ public class PlayerController : MonoBehaviour
 {
 
     public GameObject bullet;
-    public GameObject shooter;
     public float moveSpeed = 5.0f; // Speed of the spaceship
 
     private void Update()
