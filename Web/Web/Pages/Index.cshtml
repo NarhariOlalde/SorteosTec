@@ -4,12 +4,71 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="principal-content">
+<html>
+<head>
+    <title>Instrucciones de Juego</title>
+    <link href="../wwwroot/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
 
-    <div class="text-center">
-        <h1 class="display-4">Welcome</h1>
-        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-        <button type="button" class="btn btn-primary border-primary">Primary</button>
+    <div class="container">
+        <h1 class="text-center my-4">Instrucciones Generales</h1>
+        <h2 class="text-center my-4">Estas listo para jugar y ganar con Sorteos Tec?</h2>
+        <p class="text-center my-4">Para poder participar en los juegos de Sorteos Tec, es necesario que tengas una cuenta de Sorteos Tec. Si no tienes una cuenta, puedes crear una <a href="Login">aquí</a>.</p>
+        
+        <div class="row">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h2>Controles Generales</h2>
+                </div>
+                <div class="card-body">
+                    <p>Para moverte dentro del juego solo necesitas utilizar dos teclas!!!</p>
+                    <p>Para moverte a la izquierda utiliza la tecla A.</p>
+                    <p>Para moverte a la derecha utiliza la tecla D.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="my-4"></div>
+
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>TecBasket</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>Recolecta llaves y esquiva las bombas.</p>
+                        <img src="images/game-prototype.webp" alt="TecBasket" width="200px" height="100px">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="card">
+                    <div class="card-header ">
+                        <h2>TecShip</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>Destruye los meteoritos para conseguir llaves y evita chocar</p>
+                        <img src="images/game-prototype.webp" alt="TecBasket" width="200px" height="100px">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 text-center">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>TecJump</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>Salta en las plataformas, recolecta llaves y evita caerte</p>
+                        <img src="images/game-prototype.webp" alt="TecBasket" width="200px" height="100px">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-</div>
+
+</body>
+</html>
