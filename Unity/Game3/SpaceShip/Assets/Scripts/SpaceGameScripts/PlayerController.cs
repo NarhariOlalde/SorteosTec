@@ -17,11 +17,11 @@ public class PlayerController : MonoBehaviour
     {
         float horizontalInput = 0;
 
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             horizontalInput = -1; // Move left
         }
-        else if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             horizontalInput = 1; // Move right
         }
