@@ -4,7 +4,6 @@ CREATE TABLE `Usuario` (
   `id_usuario` integer PRIMARY KEY AUTO_INCREMENT,
   `nombre` text,
   `correo` text,
-  `premios` text,
   `datos_bancarios` text,
   `genero` text,
   `sexo` text,
