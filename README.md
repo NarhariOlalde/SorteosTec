@@ -1,3 +1,3 @@
 # SorteosTec
 
-Rocho es un noob
+Rocho es un noob 🤣
