@@ -220,3 +220,52 @@ body, p, a, li, span, div {
     padding: 45px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
+
+.mac-key {
+    /*Box Properties*/
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    margin: 0px 4px;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.5);
+    /*Text Properties*/
+    font: 18px/48px Helvetica, serif;
+    text-transform: uppercase;
+    text-align: center;
+    color: #666;
+}
+
+.card {
+    transition: all 0.3s ease-in-out;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Utilities */
+.max-w-300 {
+    max-width: 300px;
+    margin: auto;
+}
+
+.max-w-600 {
+    max-width: 600px;
+    margin: auto;
+}
+
+.max-w-900 {
+    max-width: 900px;
+    margin: auto;
+}
+
+.max-w-1200 {
+    max-width: 1200px;
+    margin: auto;
+}
