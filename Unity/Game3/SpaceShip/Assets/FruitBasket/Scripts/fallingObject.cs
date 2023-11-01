@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class fallingObject : MonoBehaviour
 {
@@ -27,6 +28,10 @@ public class fallingObject : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            if (gameObject.CompareTag("Bomb"))
+            {
+                SceneManager.LoadScene("GameOver");
+            }
             GameObject.Destroy(this.gameObject);
         }
     }
