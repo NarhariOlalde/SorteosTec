@@ -13,7 +13,7 @@ public class ChangeSceneScript : MonoBehaviour
     {
         {1, "SpaceGameScene"},
         {2, "FruitBasket"},
-        {3, "Game2"}
+        {3, "TecJump"}
     };
 
     // Start is called before the first frame update

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class fallingObject : MonoBehaviour
 {
-    public float velocity;
+    public float velocity = 100;
 
 
     // Start is called before the first frame update
