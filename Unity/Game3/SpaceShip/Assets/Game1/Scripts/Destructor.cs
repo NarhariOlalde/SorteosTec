@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Destructor : MonoBehaviour
 {
@@ -10,7 +9,6 @@ public class Destructor : MonoBehaviour
 
     public GameObject PlatformPrefab;
     public GameObject SpringPrefab;
-    private GameObject Plat;
 
     // Start is called before the first frame update
     void Start()
@@ -38,7 +36,7 @@ public class Destructor : MonoBehaviour
                 collision.gameObject.transform.position = new Vector2(Random.Range(-12f, 12f), Player.transform.position.y + (10 + Random.Range(0.2f, 1.0f)));
             }
         }
-        else if (collision.gameObject.name.StartsWith("Spring"))
+        else if (collision.gameObject.name.StartsWith("SprintPlatform"))
         {
             if (Random.Range(1, 7) == 1)
             {
