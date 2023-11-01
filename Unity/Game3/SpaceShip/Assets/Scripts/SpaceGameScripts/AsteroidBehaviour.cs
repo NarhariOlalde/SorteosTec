@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AsteroidBehaviour : MonoBehaviour
 {
@@ -40,6 +41,7 @@ public class AsteroidBehaviour : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             GameObject.Destroy(this.gameObject);
+            SceneManager.LoadSceneAsync("GameOver");
         }
 	else if (collision.gameObject.CompareTag("Bullet"))
 	{
