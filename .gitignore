@@ -3,6 +3,8 @@
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
 
+.vscode/*
+
 SinBoulders*
 /Unity/Game3/*/[Ll]ibrary/
 /Unity/Game3/*/[Tt]emp/
