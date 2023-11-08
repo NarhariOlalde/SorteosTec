@@ -24,7 +24,7 @@ public class Destructor : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name.StartsWith("Platform"))
+        if (collision.gameObject.name.StartsWith("plataforma_normal"))
         {
             if (Random.Range(1, 7) == 1)
             {
@@ -36,11 +36,11 @@ public class Destructor : MonoBehaviour
                 collision.gameObject.transform.position = new Vector2(Random.Range(-12f, 12f), Player.transform.position.y + (10 + Random.Range(0.2f, 1.0f)));
             }
         }
-        else if (collision.gameObject.name.StartsWith("SprintPlatform"))
+        else if (collision.gameObject.name.StartsWith("plataforma_bounce"))
         {
             if (Random.Range(1, 7) == 1)
             {
-                collision.gameObject.transform.position = new Vector2(Random.Range(-12f, 12f), Player.transform.position.y + (10 + Random.Range(0.2f, 1.0f))); 
+                collision.gameObject.transform.position = new Vector2(Random.Range(-12f, 12f), Player.transform.position.y + (10 + Random.Range(0.2f, 1.0f)));
             }
             else
             {
