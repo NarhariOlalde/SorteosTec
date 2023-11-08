@@ -26,11 +26,11 @@ public class Controller : MonoBehaviour
     {
         if (MoveInput < 0)
         {
-            this.GetComponent<SpriteRenderer>().flipX = false;
+            this.GetComponent<SpriteRenderer>().flipX = true;
         }
         else
         {
-            this.GetComponent<SpriteRenderer>().flipX = true;
+            this.GetComponent<SpriteRenderer>().flipX = false;
         }
 
         if (rb.velocity.y > 0 && transform.position.y > topScore)
