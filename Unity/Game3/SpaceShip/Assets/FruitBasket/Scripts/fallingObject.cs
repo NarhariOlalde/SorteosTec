@@ -5,7 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class fallingObject : MonoBehaviour
 {
-    public float velocity = 100;
+    public float velocity = 200;
+
+    [Range (0, 50)] public int points = 0;
 
 
     // Start is called before the first frame update
@@ -33,6 +35,7 @@ public class fallingObject : MonoBehaviour
                 SceneManager.LoadScene("GameOver");
             }
             GameObject.Destroy(this.gameObject);
+            GameBasketController.Instance.UIControl.AddPoints(points);
         }
     }
 }
