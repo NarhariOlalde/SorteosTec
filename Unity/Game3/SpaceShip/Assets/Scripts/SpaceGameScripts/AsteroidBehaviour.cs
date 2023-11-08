@@ -7,6 +7,7 @@ public class AsteroidBehaviour : MonoBehaviour
 {
     public int asteroidType;
     public int health;
+    public int destroy_score = 50;
 
     public float velocity;
 
@@ -32,6 +33,9 @@ public class AsteroidBehaviour : MonoBehaviour
 	if (health <= 0)
 	{
 	    GameObject.Destroy(this.gameObject);
+	    PlayerPrefs.SetInt("score", PlayerPrefs.GetInt("score", 0) + destroy_score);
+	    Debug.Log(PlayerPrefs.GetInt("score", 0).ToString());
+
 	}
     }
 
@@ -48,6 +52,7 @@ public class AsteroidBehaviour : MonoBehaviour
             Debug.Log("Collision Bullet");
 	    health -= 50;
 	    Debug.Log(health);
+
             //GameObject.Destroy(this.gameObject);
 	}
     }

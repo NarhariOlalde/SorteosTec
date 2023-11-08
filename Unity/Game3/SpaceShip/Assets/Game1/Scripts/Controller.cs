@@ -11,7 +11,7 @@ public class Controller : MonoBehaviour
     private float MoveInput;
     private float Speed = 10f;
 
-    private float topScore = 0.0f;
+    private float startScore = 0.0f;
     private float fallLimit = 18.0f; // La distancia máxima que el jugador puede caer por debajo de topScore
 
     public Text ScoreText;
@@ -20,10 +20,14 @@ public class Controller : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+	startScore = PlayerPrefs.GetInt("score", (int)startScore);
     }
 
     void Update()
     {
+	float topScore = PlayerPrefs.GetInt("score", (int)startScore);
+	fallLimit = topScore + 18.0f;
+
         if (MoveInput < 0)
         {
             this.GetComponent<SpriteRenderer>().flipX = true;
@@ -33,9 +37,9 @@ public class Controller : MonoBehaviour
             this.GetComponent<SpriteRenderer>().flipX = false;
         }
 
-        if (rb.velocity.y > 0 && transform.position.y > topScore)
+        if (rb.velocity.y > 0) //&& transform.position.y > topScore)
         {
-            topScore = transform.position.y;
+            topScore = transform.position.y + startScore;
         }
 
         // Comprobar si el jugador ha caído por debajo del límite
@@ -46,6 +50,8 @@ public class Controller : MonoBehaviour
         }
 
         ScoreText.text = "Score: " + Mathf.Round(topScore).ToString();
+	//startScore = topScore;
+	PlayerPrefs.SetInt("score", (int)topScore);
     }
 
     // Update is called once per frame

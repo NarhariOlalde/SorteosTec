@@ -12,6 +12,8 @@ public class MainMenuController : MonoBehaviour
     private void Awake()
     {
         game_selector = rnd.Next(1, 4);
+	PlayerPrefs.SetInt("score", 0);
+
     }
 
     public void PlayGame()

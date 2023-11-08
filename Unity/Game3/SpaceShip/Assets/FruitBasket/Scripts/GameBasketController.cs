@@ -15,7 +15,7 @@ public class GameBasketController : MonoBehaviour
     private void Awake()
     {
         StopAllCoroutines();
-        PlayerPrefs.SetInt("score", 0);
+        //PlayerPrefs.SetInt("score", 0);
         if (Instance == null)
         {
             Instance = this;
