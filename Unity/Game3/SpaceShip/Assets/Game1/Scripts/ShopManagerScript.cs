@@ -43,7 +43,7 @@ public class ShopManagerScript : MonoBehaviour
 
             coins -= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().ItemID];
 
-            shopItems[3, ButtonRef.GetComponent<ButtonInfo>().ItemID]++;
+ 
 
             CoinsTXT.text = "Coins:" + coins.ToString();
 
