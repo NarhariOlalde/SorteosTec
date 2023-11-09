@@ -1,14 +1,19 @@
-create database `SorteosTec`;
-
 CREATE TABLE `Usuario` (
   `id_usuario` integer PRIMARY KEY AUTO_INCREMENT,
   `nombre` text,
+  `apellido` text,
   `correo` text,
   `datos_bancarios` text,
   `genero` text,
   `sexo` text,
-  `edad` text,
+  `edad` int,
   `localizacion` text
+);
+
+CREATE TABLE `UserName` (
+  `id_usuario` int,
+  `nombre` text,
+  `password` text
 );
 
 CREATE TABLE `UserGame` (
@@ -41,6 +46,8 @@ CREATE TABLE `Administrador` (
   `id_usuario` int,
   `id_transaccion` int
 );
+
+ALTER TABLE `UserName` ADD FOREIGN KEY (`id_usuario`) REFERENCES `Usuario` (`id_usuario`);
 
 ALTER TABLE `UserGame` ADD FOREIGN KEY (`id_usuario`) REFERENCES `Usuario` (`id_usuario`);
 
