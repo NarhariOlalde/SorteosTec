@@ -1130,11 +1130,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asteroid_small: {fileID: 7159268980450084211, guid: 7751839174edd4245b15a57225744a2a, type: 3}
   asteroid_medium: {fileID: 4421342418926606255, guid: a28d9a9cf78ae453e9609b72fa77fd42, type: 3}
-  asteroid_big: {fileID: 5268026660933505722, guid: dfca7499571034f0a96b163e69121590, type: 3}
+  asteroid_big: {fileID: 0}
   maxWidth: 10
   minWidth: -10
-  timeToSpawnMin: 10
-  timeToSpawnMax: 10
+  timeToSpawnMin: 1
+  timeToSpawnMax: 1
   smallAsteroidChance: 0.6
   mediumAsteroidChance: 0.3
   bigAsteroidChance: 0.1
