@@ -10,11 +10,12 @@ public class ShopManagerScript : MonoBehaviour
 
 
     public int[,] shopItems = new int[5,5];
-    public float coins;
+    public int coins;
     public Text CoinsTXT;
     // Start is called before the first frame update
     void Start()
     {
+	coins = PlayerPrefs.GetInt("total_score", 0);
         CoinsTXT.text = "Coins:" + coins.ToString();
 
         shopItems[1, 1] = 1;
@@ -43,11 +44,12 @@ public class ShopManagerScript : MonoBehaviour
 
             coins -= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().ItemID];
 
-            shopItems[3, ButtonRef.GetComponent<ButtonInfo>().ItemID]++;
+            //shopItems[3, ButtonRef.GetComponent<ButtonInfo>().ItemID]++;
 
             CoinsTXT.text = "Coins:" + coins.ToString();
 
             ButtonRef.GetComponent<ButtonInfo>().QuantityTxt.text = shopItems[3, ButtonRef.GetComponent<ButtonInfo>().ItemID]++.ToString() ;
+	    PlayerPrefs.SetInt("total_score", coins);
         }
     }
     // Update is called once per frame
