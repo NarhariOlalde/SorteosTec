@@ -4,7 +4,10 @@
 // Write your JavaScript code.
 
 $(document).ready(function () {
-    $('#loginModal').modal('show');
+    // Asignar evento click al botón de inicio de sesión
+    $('#loginButton').on('click', function () {
+        $('#loginModal').modal('show');
+    });
 });
 
 document.addEventListener('DOMContentLoaded', function () {
