@@ -23,8 +23,8 @@ public class UIControl : MonoBehaviour
 
     public void AddPoints(int _points)
     {
-        currentScore += _points;
-        PlayerPrefs.SetInt("score", currentScore);
+        currentScore +=_points;
+        PlayerPrefs.SetInt("score", PlayerPrefs.GetInt("score", 0) + currentScore);
         printScore();
     }
 

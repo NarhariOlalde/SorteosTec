@@ -16,7 +16,7 @@ public class ShopManagerScript : MonoBehaviour
     void Start()
     {
 	coins = PlayerPrefs.GetInt("total_score", 0);
-        CoinsTXT.text = "Coins:" + coins.ToString();
+        CoinsTXT.text = "Puntos: " + coins.ToString();
 
         shopItems[1, 1] = 1;
         shopItems[1, 2] = 2;
@@ -46,7 +46,7 @@ public class ShopManagerScript : MonoBehaviour
 
  
 
-            CoinsTXT.text = "Coins:" + coins.ToString();
+            CoinsTXT.text = "Puntos: " + coins.ToString();
 
             ButtonRef.GetComponent<ButtonInfo>().QuantityTxt.text = shopItems[3, ButtonRef.GetComponent<ButtonInfo>().ItemID]++.ToString() ;
 	    PlayerPrefs.SetInt("total_score", coins);
