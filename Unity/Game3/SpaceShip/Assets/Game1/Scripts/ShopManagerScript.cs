@@ -10,11 +10,12 @@ public class ShopManagerScript : MonoBehaviour
 
 
     public int[,] shopItems = new int[5,5];
-    public float coins;
+    public int coins;
     public Text CoinsTXT;
     // Start is called before the first frame update
     void Start()
     {
+	coins = PlayerPrefs.GetInt("total_score", 0);
         CoinsTXT.text = "Coins:" + coins.ToString();
 
         shopItems[1, 1] = 1;
@@ -22,15 +23,15 @@ public class ShopManagerScript : MonoBehaviour
         shopItems[1, 3] = 3;
         shopItems[1, 4] = 4;
         //Price
-        shopItems[2, 1] = 1;
-        shopItems[2, 2] = 2;
-        shopItems[2, 3] = 3;
-        shopItems[2, 4] = 4;
+        shopItems[2, 1] = 10;
+        shopItems[2, 2] = 20;
+        shopItems[2, 3] = 30;
+        shopItems[2, 4] = 40;
         //QTY
-        shopItems[3, 1] = 1;
-        shopItems[3, 2] = 2;
-        shopItems[3, 3] = 3;
-        shopItems[3, 4] = 4;
+        shopItems[3, 1] = 0;
+        shopItems[3, 2] = 0;
+        shopItems[3, 3] = 0;
+        shopItems[3, 4] = 0;
     }
 
 
@@ -43,11 +44,12 @@ public class ShopManagerScript : MonoBehaviour
 
             coins -= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().ItemID];
 
-            shopItems[3, ButtonRef.GetComponent<ButtonInfo>().ItemID]++;
+ 
 
             CoinsTXT.text = "Coins:" + coins.ToString();
 
             ButtonRef.GetComponent<ButtonInfo>().QuantityTxt.text = shopItems[3, ButtonRef.GetComponent<ButtonInfo>().ItemID]++.ToString() ;
+	    PlayerPrefs.SetInt("total_score", coins);
         }
     }
     // Update is called once per frame

@@ -1,0 +1,12 @@
+﻿@page
+@model Web.Pages.UserRegisterModel
+@{
+    ViewData["Title"] = "New user form";
+}
+
+<!-- Formulario para el registro de usuario -->
+<form method="post">
+    <input asp-for="NewUser.nombre" />
+    <!-- Otros campos para NewUser -->
+    <button type="submit">Crear Usuario</button>
+</form>
