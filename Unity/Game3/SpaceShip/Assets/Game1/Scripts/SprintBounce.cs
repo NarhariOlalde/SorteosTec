@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class SprintBounce : MonoBehaviour
 {
+    public AudioSource source;
+    public AudioClip superJump;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +21,8 @@ public class SprintBounce : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+	source.clip = superJump;
+	source.Play();
 
         if (collision.gameObject.GetComponent<Rigidbody2D>().velocity.y <= 0)
         {
