@@ -7,9 +7,7 @@ public class ObjectSpawner : MonoBehaviour
     public GameObject Y_Gem;
     public GameObject G_Gem;
     public GameObject R_Gem;
-    public GameObject B_Gem;
     public GameObject S_Ball;
-    public GameObject Heart;
     public float maxWidth;
     public float minWidth;
     public float timeToSpawnMin;
@@ -27,7 +25,7 @@ public class ObjectSpawner : MonoBehaviour
 
         // Probabilities will be used
 
-        int possibleObject = Random.Range(1,7);
+        int possibleObject = Random.Range(1,5);
         float objPosition = Random.Range(minWidth, maxWidth);
 
         switch(possibleObject)
@@ -45,15 +43,7 @@ public class ObjectSpawner : MonoBehaviour
                 break;
 
             case 4:
-                Instantiate(B_Gem, new Vector3(transform.position.x + objPosition, transform.position.y, 0), Quaternion.identity);
-                break;
-            
-            case 5:
                 Instantiate(S_Ball, new Vector3(transform.position.x + objPosition, transform.position.y, 0), Quaternion.identity);
-                break;
-
-            case 6:
-                Instantiate(Heart, new Vector3(transform.position.x + objPosition, transform.position.y, 0), Quaternion.identity);
                 break;
         }
 
