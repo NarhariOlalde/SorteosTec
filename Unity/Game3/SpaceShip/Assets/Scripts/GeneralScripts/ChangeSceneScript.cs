@@ -8,6 +8,10 @@ public class ChangeSceneScript : MonoBehaviour
     private System.Random rnd = new System.Random();
     private string currentSceneName;
     public int game_selector;
+    public float transitionTime = 1f;
+
+    //private Animator animator;
+    public Animator animator;
 
     private Dictionary<int, string> gameNames = new Dictionary<int, string>()
     {
@@ -19,13 +23,14 @@ public class ChangeSceneScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+	//animator = GetComponent<Animator>();
         currentSceneName = SceneManager.GetActiveScene().name;
         StartCoroutine(WaitAndChooseRandomNumber());
     }
 
     private IEnumerator WaitAndChooseRandomNumber()
     {
-        yield return new WaitForSeconds(15); // Wait for 15 seconds
+        yield return new WaitForSeconds(15 + transitionTime); // Wait for 15 seconds
 
         string newSceneName;
         do
@@ -35,6 +40,7 @@ public class ChangeSceneScript : MonoBehaviour
         } while (newSceneName == currentSceneName);
 
         Debug.Log("Switching to scene: " + newSceneName);
+	animator.SetTrigger("StartTransition");
         SceneManager.LoadScene(newSceneName);
     }
 }
