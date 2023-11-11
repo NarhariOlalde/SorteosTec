@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using JetBrains.Annotations;
 
 public class GameOverUIController : MonoBehaviour
 {
     public Text puntajeFinal;
-
+    public AudioClip loseSound;
     // Start is called before the first frame update
     void Start()
     {
+        AudioSource.PlayClipAtPoint(loseSound,Camera.main.transform.position,0.5f);
         int currentScore = PlayerPrefs.GetInt("score", 0);
         PlayerPrefs.SetInt("total_score", PlayerPrefs.GetInt("total_score", 0) + currentScore);
 	Debug.Log("TOTLA SCORE:" + PlayerPrefs.GetInt("total_score", 0).ToString());
