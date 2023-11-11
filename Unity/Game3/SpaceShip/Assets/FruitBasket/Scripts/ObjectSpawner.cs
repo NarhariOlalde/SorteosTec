@@ -40,19 +40,19 @@ public class ObjectSpawner : MonoBehaviour
 
         if (randomValue < YGemChance)
         {
-            gemToSpawn = Y_Gem;
+            gemToSpawn = S_Ball;
         }
         else if (randomValue < YGemChance + GGemChance)
         {
-            gemToSpawn = G_Gem;
+            gemToSpawn = Y_Gem;
         }
         else if (randomValue < YGemChance + GGemChance + RGemChance)
         {
-            gemToSpawn = R_Gem;
+            gemToSpawn = G_Gem;
         }
         else if (randomValue < YGemChance + GGemChance + RGemChance + SBallChance)
         {
-            gemToSpawn = S_Ball;
+            gemToSpawn = R_Gem;
         }
 
         if (gemToSpawn != null)
