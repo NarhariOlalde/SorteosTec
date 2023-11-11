@@ -19,6 +19,7 @@ public class GameOverUIController : MonoBehaviour
 	Debug.Log("TOTLA SCORE:" + PlayerPrefs.GetInt("total_score", 0).ToString());
 	puntajeFinal.text = "PUNTOS TOTALES: " + currentScore.ToString();
 	PlayerPrefs.SetInt("score", 0);
+	PlayerPrefs.SetInt("lives", PlayerPrefs.GetInt("lives", 3) - 1);
     }
 
     // Update is called once per frame

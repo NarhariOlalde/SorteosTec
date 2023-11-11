@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System;
+using UnityEngine.UI;
 
 public class MainMenuController : MonoBehaviour
 {
 
+    public Sprite SpentLife;
+    public Image[] livesImage;
     public AudioClip audio_button_play;
     private System.Random rnd = new System.Random();
     public int game_selector;
@@ -25,17 +28,24 @@ public class MainMenuController : MonoBehaviour
         //PlayerPrefs.DeleteAll();
         game_selector = rnd.Next(1, 4);
 	PlayerPrefs.SetInt("score", 0);
+	//PlayerPrefs.SetInt("lives", 3);
+
+	PlayerPrefs.SetInt("lives", PlayerPrefs.GetInt("lives", 3));
 
 	// Cambiar para hacer que lo agarre del API
 	PlayerPrefs.SetInt("total_score", PlayerPrefs.GetInt("total_score", 0));
 	PlayerPrefs.SetFloat("difficulty_multiplier", 1f);
+	UpdateLives();
 
     }
 
     public void PlayGame()
     {
 
-
+	if (PlayerPrefs.GetInt("lives", 3) <= 0) 
+	{
+	    return;
+	}
         SceneManager.LoadSceneAsync(game_selector);
     }
 
@@ -50,5 +60,29 @@ public class MainMenuController : MonoBehaviour
     void OnApplicationQuit()
     {
 	PlayerPrefs.DeleteAll();
+    }
+
+    public void UpdateLives()
+    {
+	int lives = PlayerPrefs.GetInt("lives", 3);
+	if (lives == 3)
+	{
+
+	}
+	else if (lives == 2)
+	{
+	    livesImage[2].sprite = SpentLife;
+	}
+	else if (lives == 1)
+	{
+	    livesImage[2].sprite = SpentLife;
+	    livesImage[1].sprite = SpentLife;
+	}
+	else if (lives == 0)
+	{
+	    livesImage[2].sprite = SpentLife;
+	    livesImage[1].sprite = SpentLife;
+	    livesImage[0].sprite = SpentLife;
+	}
     }
 }
