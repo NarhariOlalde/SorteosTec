@@ -27,7 +27,7 @@ public class ObjectSpawner : MonoBehaviour
     IEnumerator SpawnerTimer()
     {
 	SBallChance *= PlayerPrefs.GetFloat("difficulty_multiplier", 1f);
-        yield return new WaitForSeconds(Random.Range(timeToSpawnMin, timeToSpawnMax) * PlayerPrefs.GetFloat("difficulty_multiplier", 1f));
+        yield return new WaitForSeconds(Random.Range(timeToSpawnMin, timeToSpawnMax) / PlayerPrefs.GetFloat("difficulty_multiplier", 1f));
 
         // Probabilities will be used
 

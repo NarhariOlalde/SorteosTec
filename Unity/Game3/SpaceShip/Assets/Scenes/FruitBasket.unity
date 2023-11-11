@@ -174,7 +174,11 @@ MonoBehaviour:
   maxWidth: 8
   minWidth: -8
   timeToSpawnMin: 1
-  timeToSpawnMax: 2
+  timeToSpawnMax: 1
+  YGemChance: 0.5
+  GGemChance: 0.3
+  RGemChance: 0.2
+  SBallChance: 0.2
 --- !u!1 &124703517
 GameObject:
   m_ObjectHideFlags: 0

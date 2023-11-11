@@ -28,6 +28,7 @@ public class MainMenuController : MonoBehaviour
 
 	// Cambiar para hacer que lo agarre del API
 	PlayerPrefs.SetInt("total_score", PlayerPrefs.GetInt("total_score", 0));
+	PlayerPrefs.SetFloat("difficulty_multiplier", 1f);
 
     }
 
