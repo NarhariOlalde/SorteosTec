@@ -164,8 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f755971ffe1e40e98f833885246b33b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  source: {fileID: -6234967240776568652}
-  jumpAudio: {fileID: 8300000, guid: 51d8d737d8506fd4bbe44d5a63342abf, type: 3}
+  bounce: {fileID: 8300000, guid: 51d8d737d8506fd4bbe44d5a63342abf, type: 3}
 --- !u!82 &-6234967240776568652
 AudioSource:
   m_ObjectHideFlags: 0

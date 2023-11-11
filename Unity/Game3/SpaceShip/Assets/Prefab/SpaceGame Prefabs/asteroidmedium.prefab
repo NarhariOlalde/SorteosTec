@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d895e1ed78e148ab856ae368d4da9b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosion: {fileID: 8300000, guid: 9e096adf58e15484bb8ae647d91bc46f, type: 3}
   asteroidType: 2
   health: 100
   destroy_score: 50
