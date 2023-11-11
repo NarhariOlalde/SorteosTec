@@ -24,7 +24,7 @@ public class AsteroidSpawner : MonoBehaviour
 
     IEnumerator AsteroidSpawnerTimer()
     {
-        yield return new WaitForSeconds(Random.Range(timeToSpawnMin, timeToSpawnMax));
+        yield return new WaitForSeconds(Random.Range(timeToSpawnMin, timeToSpawnMax) / PlayerPrefs.GetFloat("difficulty_multiplier", 1f));
 
         float randomValue = Random.value;
 
