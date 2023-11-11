@@ -13,6 +13,11 @@ public class ObjectSpawner : MonoBehaviour
     public float timeToSpawnMin;
     public float timeToSpawnMax;
 
+    public float YGemChance = 0.5f;  // 50% chance
+    public float GGemChance = 0.3f; // 30% chance
+    public float RGemChance = 0.2f;    // 20% chance
+    public float SBallChance = 0.2f;    // 20% chance
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,33 +26,41 @@ public class ObjectSpawner : MonoBehaviour
 
     IEnumerator SpawnerTimer()
     {
-        yield return new WaitForSeconds(Random.Range(timeToSpawnMin, timeToSpawnMax));
+	SBallChance *= PlayerPrefs.GetFloat("difficulty_multiplier", 1f);
+        yield return new WaitForSeconds(Random.Range(timeToSpawnMin, timeToSpawnMax) * PlayerPrefs.GetFloat("difficulty_multiplier", 1f));
 
         // Probabilities will be used
 
         int possibleObject = Random.Range(1,5);
         float objPosition = Random.Range(minWidth, maxWidth);
 
-        switch(possibleObject)
+        float randomValue = Random.value;
+
+        GameObject gemToSpawn = null;
+
+        if (randomValue < YGemChance)
         {
-            case 1:
-                Instantiate(Y_Gem, new Vector3(transform.position.x + objPosition, transform.position.y, 0), Quaternion.identity);
-                break;
-
-            case 2:
-                Instantiate(G_Gem, new Vector3(transform.position.x + objPosition, transform.position.y, 0), Quaternion.identity);
-                break;
-
-            case 3:
-                Instantiate(R_Gem, new Vector3(transform.position.x + objPosition, transform.position.y, 0), Quaternion.identity);
-                break;
-
-            case 4:
-                Instantiate(S_Ball, new Vector3(transform.position.x + objPosition, transform.position.y, 0), Quaternion.identity);
-                break;
+            gemToSpawn = Y_Gem;
+        }
+        else if (randomValue < YGemChance + GGemChance)
+        {
+            gemToSpawn = G_Gem;
+        }
+        else if (randomValue < YGemChance + GGemChance + RGemChance)
+        {
+            gemToSpawn = R_Gem;
+        }
+        else if (randomValue < YGemChance + GGemChance + RGemChance + SBallChance)
+        {
+            gemToSpawn = S_Ball;
         }
 
-        
+        if (gemToSpawn != null)
+        {
+            Instantiate(gemToSpawn, new Vector3(transform.position.x + Random.Range(minWidth, maxWidth),
+                transform.position.y, 0),
+                Quaternion.identity);
+        }
 
         StartCoroutine(SpawnerTimer());
     }
