@@ -17,80 +17,32 @@ class MainController {
     });
   }
 
-  async addBook(req, res) {
-    console.log("Add Book RTQ");
+  async createUser(req, res) {
+    console.log("Create User");
     console.log(req.body);
-    if (
-      req.body.name != null &&
-      req.body.author != null &&
-      req.body.cover != null 
-    ) {
-      let name = req.body.name;
-      let author = req.body.author;
-      let cover = req.body.cover;
-      var sql = `call sp_add_book('${name}', '${author}', '${cover}');`;
-      mysql.query(sql, (error, data, fields) => {
-        if (error) {
-          res.status(500);
-          res.send(error.message);
-          console.log(error.message);
-        } else {
-          console.log(data);
-          res.json({
-            status: 200,
-            message: "Books uploaded successfully",
-            affectedRows: data.affectedRows,
-          });
-        }
-      });
-    } else {
-      res.send("Por favor llena todos los datos!");
-      console.log("Por favor llena todos los datos!");
-    }
-  }
 
-  async editBook(req, res) {
-    console.log("Edit Book RTQ");
-    console.log(req.body);
     if (
-      req.params.id != null &&
-      req.body.name != null &&
-      req.body.author != null &&
-      req.body.cover != null 
+      req.body.nombre != null &&
+      req.body.apellido != null &&
+      req.body.correo != null &&
+      req.body.datos_bancarios != null &&
+      req.body.genero != null &&
+      req.body.sexo != null &&
+      req.body.edad != null &&
+      req.body.localizacion != null &&
+      req.body.administrador != null
     ) {
-      let bookID = req.params.id;
-      let name = req.body.name;
-      let author = req.body.author;
-      let cover = req.body.cover;
-      var sql = `call sp_edit_book('${bookID}','${name}', '${author}', '${cover}');`;
-      mysql.query(sql, (error, data, fields) => {
-        if (error) {
-          res.status(500);
-          res.send(error.message);
-          console.log(error.message);
-        } else {
-          console.log(data);
-          res.json({
-            status: 200,
-            message: "Book updated successfully",
-            affectedRows: data.affectedRows,
-          });
-        }
-      });
-    } else {
-      res.send("Por favor llena todos los datos!");
-      console.log("Por favor llena todos los datos!");
-    }
-  }
+      let nombre = req.body.nombre;
+      let apellido = req.body.apellido;
+      let correo = req.body.correo;
+      let datos_bancarios = req.body.datos_bancarios;
+      let genero = req.body.genero;
+      let sexo = req.body.sexo;
+      let edad = req.body.edad;
+      let localizacion = req.body.localizacion;
+      let administrador = req.body.administrador;
 
-  async deleteBook(req, res) {
-    console.log("Delete Book RTQ");
-    console.log(req.params.id);
-    if (
-      req.params.id != null
-    ) {
-      let bookID = req.params.id;
-      var sql = `call sp_delete_book('${bookID}');`;
+      var sql = `call addNewUser('${nombre}', '${apellido}', '${correo}', '${datos_bancarios}', '${genero}', '${sexo}', '${edad}', '${localizacion}', '${administrador}');`;
       mysql.query(sql, (error, data, fields) => {
         if (error) {
           res.status(500);
@@ -100,7 +52,7 @@ class MainController {
           console.log(data);
           res.json({
             status: 200,
-            message: "Book deleted successfully",
+            message: "User created successfully",
             affectedRows: data.affectedRows,
           });
         }
@@ -112,5 +64,5 @@ class MainController {
   }
 }
 
-const bookController = new MainController();
-module.exports = bookController;
+const userController = new MainController();
+module.exports = userController;

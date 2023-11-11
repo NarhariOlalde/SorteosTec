@@ -2,12 +2,14 @@ DELIMITER //
 
 CREATE PROCEDURE AddNewUser(
     IN _nombre TEXT,
+    IN _apellido TEXT,
     IN _correo TEXT,
     IN _datos_bancarios TEXT,
     IN _genero TEXT,
     IN _sexo TEXT,
     IN _edad TEXT,
-    IN _localizacion TEXT
+    IN _localizacion TEXT,
+    IN _administrador TEXT,
 )
 BEGIN
     INSERT INTO Usuario (nombre, correo, datos_bancarios, genero, sexo, edad, localizacion) 
