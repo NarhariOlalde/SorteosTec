@@ -1,3 +1,7 @@
+create database sorteostec;
+
+use sorteostec;
+
 CREATE TABLE `Usuario` (
   `id_usuario` integer PRIMARY KEY AUTO_INCREMENT,
   `nombre` text,
