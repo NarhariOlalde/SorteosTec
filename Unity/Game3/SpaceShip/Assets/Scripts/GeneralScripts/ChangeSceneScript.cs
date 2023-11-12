@@ -39,6 +39,7 @@ public class ChangeSceneScript : MonoBehaviour
             newSceneName = gameNames[game_selector];
         } while (newSceneName == currentSceneName);
 
+	PlayerPrefs.SetFloat("difficulty_multiplier", PlayerPrefs.GetFloat("difficulty_multiplier", 1) + 0.7f);
         Debug.Log("Switching to scene: " + newSceneName);
 	animator.SetTrigger("StartTransition");
         SceneManager.LoadScene(newSceneName);

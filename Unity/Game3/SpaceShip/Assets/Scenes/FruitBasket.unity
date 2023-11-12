@@ -174,7 +174,11 @@ MonoBehaviour:
   maxWidth: 8
   minWidth: -8
   timeToSpawnMin: 1
-  timeToSpawnMax: 2
+  timeToSpawnMax: 1
+  YGemChance: 0.5
+  GGemChance: 0.3
+  RGemChance: 0.2
+  SBallChance: 0.2
 --- !u!1 &124703517
 GameObject:
   m_ObjectHideFlags: 0
@@ -407,7 +411,6 @@ GameObject:
   m_Component:
   - component: {fileID: 455306862}
   - component: {fileID: 455306861}
-  - component: {fileID: 455306860}
   - component: {fileID: 455306864}
   - component: {fileID: 455306865}
   - component: {fileID: 455306866}
@@ -419,41 +422,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!70 &455306860
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 455306859}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.029769242, y: -0.0032132028}
-  m_Size: {x: 1.6016145, y: 2.5835876}
-  m_Direction: 0
 --- !u!212 &455306861
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -592,7 +560,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00044052303, y: -0.023032665}
+  m_Offset: {x: -0.0046361685, y: -0.035347283}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -603,7 +571,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.15149835, y: 0.27559194}
+  m_Size: {x: 1.1668487, y: 1.9577101}
   m_EdgeRadius: 0
 --- !u!95 &455306867
 Animator:

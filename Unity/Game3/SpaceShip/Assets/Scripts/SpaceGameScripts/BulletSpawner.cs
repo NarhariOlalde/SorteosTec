@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BulletSpawner : MonoBehaviour
 {
+    public AudioClip shoot;
     public GameObject bullet;
     public float timeToSpawn = 0.5f;
 
@@ -20,6 +21,8 @@ public class BulletSpawner : MonoBehaviour
             transform.position.y, 0),
             Quaternion.identity);
         StartCoroutine(SpawnerTimer());
+        AudioSource.PlayClipAtPoint(shoot, Camera.main.transform.position,0.5f);
+
     }
 
     // Update is called once per frame

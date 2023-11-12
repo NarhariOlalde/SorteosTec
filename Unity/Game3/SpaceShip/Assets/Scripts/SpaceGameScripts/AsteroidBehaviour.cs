@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class AsteroidBehaviour : MonoBehaviour
 {
+    public AudioClip explosion;
     public int asteroidType;
     public int health;
     public int destroy_score = 50;
@@ -35,6 +36,7 @@ public class AsteroidBehaviour : MonoBehaviour
 	    GameObject.Destroy(this.gameObject);
 	    PlayerPrefs.SetInt("score", PlayerPrefs.GetInt("score", 0) + destroy_score);
 	    Debug.Log(PlayerPrefs.GetInt("score", 0).ToString());
+        AudioSource.PlayClipAtPoint(explosion, Camera.main.transform.position, 0.5f);
 
 	}
     }

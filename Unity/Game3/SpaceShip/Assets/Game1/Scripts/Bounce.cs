@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Bounce : MonoBehaviour
 {
-    public AudioSource source;
-    public AudioClip jumpAudio;
+    public AudioClip bounce;
 
     // Start is called before the first frame update
     void Start()
@@ -24,9 +23,8 @@ public class Bounce : MonoBehaviour
 
         if (collision.gameObject.GetComponent<Rigidbody2D>().velocity.y <= 0)
         {
+            AudioSource.PlayClipAtPoint(bounce, Camera.main.transform.position, 0.5f);
 
-	    source.clip = jumpAudio;
-	    source.Play();
 
             collision.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector3.up * 600f);
 

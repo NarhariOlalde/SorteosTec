@@ -8,6 +8,7 @@ TagManager:
   - Asteroid
   - Bomb
   - Event
+  - Music
   layers:
   - Default
   - TransparentFX

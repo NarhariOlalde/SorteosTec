@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class fallingObject : MonoBehaviour
 {
+    public AudioClip congrats;
     public float velocity = 200;
 
     [Range (0, 50)] public int points = 0;
@@ -36,6 +37,7 @@ public class fallingObject : MonoBehaviour
             }
             GameObject.Destroy(this.gameObject);
             GameBasketController.Instance.UIControl.AddPoints(points);
+            AudioSource.PlayClipAtPoint(congrats, Camera.main.transform.position, 0.5f);
         }
     }
 }

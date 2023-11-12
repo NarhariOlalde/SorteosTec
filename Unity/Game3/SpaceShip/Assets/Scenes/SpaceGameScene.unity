@@ -852,6 +852,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7decf1f2d906084c3a2303462705f9a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shoot: {fileID: 8300000, guid: 5b4c2d413b53dd24aac86a6dcba217c8, type: 3}
   bullet: {fileID: 7856464379345925011, guid: 6076c1c36fd907548b45760df202ea95, type: 3}
   timeToSpawn: 0.4
 --- !u!1 &1007146074

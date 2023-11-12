@@ -19,6 +19,7 @@ public class Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+	Speed *= PlayerPrefs.GetFloat("difficulty_multiplier", 1f);
         rb = GetComponent<Rigidbody2D>();
 	startScore = PlayerPrefs.GetInt("score", (int)startScore);
     }
