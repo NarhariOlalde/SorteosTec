@@ -1,8 +1,5 @@
 ﻿using Web.Model;
-using Microsoft.EntityFrameworkCore;
 using MySql.Data;
-using Web.Database;
-using Microsoft.EntityFrameworkCore.Design;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,12 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 
-builder.Services.AddDbContext<SorteosTecContext>(options =>
-    options.UseMySql(
-        builder.Configuration.GetConnectionString("SorteosTecDB"),
-        new MySqlServerVersion(new Version(8, 1, 0)) // Asegúrate de especificar la versión correcta de tu servidor MySQL aquí.
-    )
-);
+
 
 builder.Services.AddControllers();
 

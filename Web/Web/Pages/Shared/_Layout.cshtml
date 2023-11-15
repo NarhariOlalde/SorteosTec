@@ -18,6 +18,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">  @*Secundaria*@
 </head>
 <body>
+
     <header>
         <nav class="bg-primary navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-white border-bottom box-shadow mb-3">
             <div class="container">
@@ -47,6 +48,7 @@
         </nav>
     </header>
 
+    @*Inicio de sesión*@
     <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
 
         <div class="modal-dialog modal-dialog-centered">
@@ -57,27 +59,227 @@
                 </div>
                 <div class="modal-body">
                     <div class="text-center">
-                        <form class="row gx-3 gy-2 align-items-center">
+                        <form method="post" asp-page="/LoginModal" class="row gx-3 gy-2 align-items-center">
                             <div class="col-sm-6">
                                 <label class="visually-hidden" for="user_name">Username</label>
                                 <div class="input-group">
                                     <div class="input-group-text">@@</div>
-                                    <input type="text" class="form-control" id="user_name" placeholder="Username" required>
+                                    <input type="text" class="form-control" name="Nombre" placeholder="Username" required>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <label class="visually-hidden" for="password">Password</label>
-                                <input type="password" class="form-control" id="password" placeholder="Password" required>
+                                <input type="password" class="form-control" name="Password" placeholder="Password" required>
                             </div>
                             <div class="col">
-                                <button type="submit" class="btn btn-primary w-100">Enviar</button>
+                                <button type="submit" class="btn btn-primary w-100">Iniciar</button>
                             </div>
+                            <small class="text-body-primary" id="openRegisterModal">¿Aún no estás registrado? <a href="#" data-bs-dismiss="modal">Regístrate aquí.</a></small>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    @*User creation form*@
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="registerModalLabel">Registro para nuevo usuario</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form method="post" asp-page="/Register" class="needs-validation" novalidate>
+
+                        <div class="row">
+                            <div class="col-sm-6 mb-3">
+                                <label for="nombre" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Tu(s) nombre(s)" required>
+
+                                @*Validación*@
+                                <div class="invalid-feedback">
+                                    Debes de ingresar un nombre válido.
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 mb-3">
+                                <label for="apellido" class="form-label">Apellidos</label>
+                                <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Tus apellidos" required>
+                                @*Validación*@
+                                <div class="invalid-feedback">
+                                    Debes ingresar apellidos válidos.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="correo" class="form-label">Correo electrónico</label>
+                            <input type="email" class="form-control" id="correo" name="correo" placeholder="Un correo electrónico al que tengas acceso" required>
+                            @*Validación*@
+                            <div class="invalid-feedback">
+                                El correo debe de ser un correo real.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="localizacion" class="form-label">Estado</label>
+                            <select id="localizacion" name="localizacion" class="form-select" required>
+                                <option value="" disabled>Seleccione un estado...</option>
+                                <option value="AGS">Aguascalientes</option>
+                                <option value="BCN">Baja California</option>
+                                <option value="BCS">Baja California Sur</option>
+                                <option value="CAM">Campeche</option>
+                                <option value="CHP">Chiapas</option>
+                                <option value="CHI">Chihuahua</option>
+                                <option value="CDMX">Ciudad de México</option>
+                                <option value="COAH">Coahuila</option>
+                                <option value="COL">Colima</option>
+                                <option value="DUR">Durango</option>
+                                <option value="GTO">Guanajuato</option>
+                                <option value="GRO">Guerrero</option>
+                                <option value="HGO">Hidalgo</option>
+                                <option value="JAL">Jalisco</option>
+                                <option value="MEX">Estado de México</option>
+                                <option value="MICH">Michoacán</option>
+                                <option value="MOR">Morelos</option>
+                                <option value="NAY">Nayarit</option>
+                                <option value="NL">Nuevo León</option>
+                                <option value="OAX">Oaxaca</option>
+                                <option value="PUE">Puebla</option>
+                                <option value="QRO">Querétaro</option>
+                                <option value="QR">Quintana Roo</option>
+                                <option value="SLP">San Luis Potosí</option>
+                                <option value="SIN">Sinaloa</option>
+                                <option value="SON">Sonora</option>
+                                <option value="TAB">Tabasco</option>
+                                <option value="TAM">Tamaulipas</option>
+                                <option value="TLAX">Tlaxcala</option>
+                                <option value="VER">Veracruz</option>
+                                <option value="YUC">Yucatán</option>
+                                <option value="ZAC">Zacatecas</option>
+                            </select>
+
+                            @*Validación*@
+                            <div class="invalid-feedback">
+                                No has seleccionado ningún estado.
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-sm-6 mb-3">
+
+                                <div>
+                                    <label class="form-label">Sexo</label>
+
+                                    <div class="d-flex">
+
+                                        <div class="flex-grow-1 d-flex align-items-center">
+                                            <input type="radio" id="masculino" name="sexo" value="masculino">
+                                            <label for="masculino" class="mb-0 ms-2">Masculino</label>
+                                        </div>
+
+                                        <div class="flex-grow-1 d-flex align-items-center">
+                                            <input type="radio" id="femenino" name="sexo" value="femenino">
+                                            <label for="femenino" class="mb-0 ms-2">Femenino</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                @*Validación
+                                    <div class="invalid-feedback">
+                                        Debes seleccionar un género.
+                                    </div>*@
+
+                            </div>
+
+                            <div class="col-sm-6 mb-3">
+                                <label for="edad" class="form-label">Edad</label>
+                                <select id="edad" name="edad" class="form-select" required>
+                                    <option value="" disabled>Selecciona tu edad...</option>
+                                    @{
+                                        var edades = Enumerable.Range(18, 53);
+
+                                        foreach (var edad in edades)
+                                        {
+                                            <option value="@edad">@edad</option>
+                                        }
+                                    }
+                                </select>
+
+                                @*Validación*@
+                                <div class="invalid-feedback">
+                                    No has seleccionado tu edad.
+                                </div>
+                            </div>
+
+                        </div>
+
+                        @*<div class="mb-3">
+                                <label for="tarjeta" class="form-label">Número de tarjeta</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="bi bi-credit-card"></i></span>
+                                    <input type="text" class="form-control" id="datos_bancarios" name="datos_bancarios" placeholder="Número de tarjeta" pattern="\d{16}" maxlength="16" required>
+                                </div>
+                            </div>*@
+
+                        @**@
+                        <div class="mb-3">
+                            <label for="tarjeta" class="form-label">Número de tarjeta</label>
+                            <div class="input-group has-validation">
+                                <span class="input-group-text"><i class="bi bi-credit-card"></i></span>
+                                <!-- Campo visible para el usuario -->
+                                <input type="text" class="form-control" id="numeroTarjetaVisual" placeholder="Número de tarjeta" maxlength="25" required>
+                                <!-- Campo oculto para enviar el formulario -->
+                                <input type="hidden" name="datos_bancarios" id="numeroTarjeta" required>
+                                @*Validación*@
+                                <div class="invalid-feedback" id="errorTarjeta">
+                                    La tarjeta debe de contener 16 números.
+                                </div>
+                            </div>
+                        </div>
+
+                        @**@
+
+
+                        <div class="row">
+
+                            <div class="col-sm-6 mb-3">
+                                <label for="user_name" class="form-label">Nombre de usuario</label>
+                                <input type="text" class="form-control" id="user_name" name="user_name" placeholder="El nombre de usuario que desees" maxlength="12" required>
+
+                                @*Validación*@
+                                <div class="invalid-feedback">
+                                    Debes ingresar un nombre de usuario
+                                </div>
+                            </div>
+                            <div class="col-sm-6 mb-3">
+                                <label for="password" class="form-label">Contraseña</label>
+                                <input type="password" class="form-control" id="password" name="password" placeholder="La contraseña que desees" maxlength="12" required>
+
+                                @*Validación*@
+                                <div class="invalid-feedback">
+                                    Debes ingresar una nueva contraseña
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="text-center">
+                            <small>Todos los campos son obligatorios.</small>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    @*User creation form close*@
 
     <div class="container">
         <main role="main" class="pb-3">
@@ -87,7 +289,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2023 - Sorteos Tec @*- <a asp-area="" asp-page="/Privacy"><i class="bi bi-shield-check"></i> Privacy</a>*@
+            &copy; 2023 - Sorteos Tec - <a asp-area="" asp-page="/Admin"><i class="bi bi-person-gear"></i> Administrador</a>
         </div>
     </footer>
 
