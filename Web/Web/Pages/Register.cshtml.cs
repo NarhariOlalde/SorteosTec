@@ -77,8 +77,11 @@ namespace Web.Pages
                             transaction.Commit();
                         }
 
+                        // Guardar el nombre en TempData
+                        TempData["NombreUsuario"] = nombre;
+
                         // Redireccionar a la página de inicio o de éxito
-                        return RedirectToPage("/UsuarioCreado");
+                        return RedirectToPage("/Index", new { registroExitoso = true });
                     }
                     catch
                     {

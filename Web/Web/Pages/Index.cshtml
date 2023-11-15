@@ -4,6 +4,31 @@
     ViewData["Title"] = "Home page";
 }
 
+@if (Model.RegistroExitoso)
+{
+    <script>$(document).ready(function () {
+            $('#registroExitosoModal').modal('show');
+        });</script>
+
+    <!-- Modal de Registro Exitoso -->
+    <div class="modal fade" id="registroExitosoModal" tabindex="-1" aria-labelledby="registroExitosoModalLabel" aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h3 class="modal-title" id="loginModalLabel">¡Bienvenido @Model.NombreUsuario!</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ¡Felicidades! Tu cuenta fue creada <span class="text-success">exitosamente</span>.<br />
+                    Ahora tienes acceso al nuevo juego de Sorteos Tec y a las compras dentro de este.
+                </div>
+            </div>
+        </div>
+
+    </div>
+}
+
 <div class="container">
 
     <h1 class="text-center my-4 text-primary">¿Estás listo para jugar y ganar con Sorteos Tec?</h1>

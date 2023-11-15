@@ -53,8 +53,8 @@
 
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="loginModalLabel">Inicio de sesión</h5>
+                <div class="modal-header text-primary">
+                    <h3 class="modal-title" id="loginModalLabel">Inicio de sesión</h3>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -86,8 +86,8 @@
     <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="registerModalLabel">Registro para nuevo usuario</h5>
+                <div class="modal-header text-primary">
+                    <h3 class="modal-title" id="registerModalLabel">Registro para nuevo usuario</h3>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -96,9 +96,7 @@
                         <div class="row">
                             <div class="col-sm-6 mb-3">
                                 <label for="nombre" class="form-label">Nombre</label>
-                                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Tu(s) nombre(s)" required>
-
-                                @*Validación*@
+                                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Tu(s) nombre(s)" pattern="[A-Za-z]+([ ]?[A-Za-z]+)*" required>
                                 <div class="invalid-feedback">
                                     Debes de ingresar un nombre válido.
                                 </div>
@@ -106,8 +104,7 @@
 
                             <div class="col-sm-6 mb-3">
                                 <label for="apellido" class="form-label">Apellidos</label>
-                                <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Tus apellidos" required>
-                                @*Validación*@
+                                <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Tus apellidos" pattern="[A-Za-z]+([ ]?[A-Za-z]+)*" required>
                                 <div class="invalid-feedback">
                                     Debes ingresar apellidos válidos.
                                 </div>
@@ -117,7 +114,6 @@
                         <div class="mb-3">
                             <label for="correo" class="form-label">Correo electrónico</label>
                             <input type="email" class="form-control" id="correo" name="correo" placeholder="Un correo electrónico al que tengas acceso" required>
-                            @*Validación*@
                             <div class="invalid-feedback">
                                 El correo debe de ser un correo real.
                             </div>
@@ -160,8 +156,6 @@
                                 <option value="YUC">Yucatán</option>
                                 <option value="ZAC">Zacatecas</option>
                             </select>
-
-                            @*Validación*@
                             <div class="invalid-feedback">
                                 No has seleccionado ningún estado.
                             </div>
@@ -198,8 +192,6 @@
                                         }
                                     }
                                 </select>
-
-                                @*Validación*@
                                 <div class="invalid-feedback">
                                     No has seleccionado tu edad.
                                 </div>
@@ -215,14 +207,11 @@
                                 <input type="text" class="form-control" id="numeroTarjetaVisual" placeholder="Número de tarjeta" maxlength="25" required>
                                 <!-- Campo oculto para enviar el formulario -->
                                 <input type="hidden" name="datos_bancarios" id="numeroTarjeta" required>
-                                @*Validación*@
                                 <div class="invalid-feedback" id="errorTarjeta">
                                     La tarjeta debe de contener 16 números.
                                 </div>
                             </div>
                         </div>
-
-                        @**@
 
 
                         <div class="row">
@@ -230,8 +219,6 @@
                             <div class="col-sm-6 mb-3">
                                 <label for="user_name" class="form-label">Nombre de usuario</label>
                                 <input type="text" class="form-control" id="user_name" name="user_name" placeholder="El nombre de usuario que desees" maxlength="12" required>
-
-                                @*Validación*@
                                 <div class="invalid-feedback">
                                     Debes ingresar un nombre de usuario
                                 </div>
@@ -239,8 +226,6 @@
                             <div class="col-sm-6 mb-3">
                                 <label for="password" class="form-label">Contraseña</label>
                                 <input type="password" class="form-control" id="password" name="password" placeholder="La contraseña que desees" maxlength="12" required>
-
-                                @*Validación*@
                                 <div class="invalid-feedback">
                                     Debes ingresar una nueva contraseña
                                 </div>

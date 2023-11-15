@@ -15,6 +15,8 @@ $(document).ready(function () {
             $('#registerModal').modal('show');
         }, 500); // Ajuste de tiempo
     });
+
+    $('#registroExitosoModal').modal('show');
 });
 
 document.addEventListener('DOMContentLoaded', function () {
