@@ -8,9 +8,7 @@ $(document).ready(function () {
     $('#loginButton').on('click', function () {
         $('#loginModal').modal('show');
     });
-});
 
-$(document).ready(function () {
     $('#openRegisterModal').on('click', function () {
         // Espera un poco para abrir el modal de registro después de cerrar el de inicio de sesión
         setTimeout(function () {
@@ -78,6 +76,8 @@ document.getElementById('numeroTarjetaVisual').addEventListener('input', functio
                 const errorDiv = document.getElementById('errorTarjeta');
                 errorDiv.style.display = 'none';
             }
+
+
 
             if (!form.checkValidity()) {
                 event.preventDefault();

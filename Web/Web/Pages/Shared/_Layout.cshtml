@@ -171,29 +171,18 @@
                         <div class="row">
 
                             <div class="col-sm-6 mb-3">
-
-                                <div>
-                                    <label class="form-label">Sexo</label>
-
-                                    <div class="d-flex">
-
-                                        <div class="flex-grow-1 d-flex align-items-center">
-                                            <input type="radio" id="masculino" name="sexo" value="masculino">
-                                            <label for="masculino" class="mb-0 ms-2">Masculino</label>
-                                        </div>
-
-                                        <div class="flex-grow-1 d-flex align-items-center">
-                                            <input type="radio" id="femenino" name="sexo" value="femenino">
-                                            <label for="femenino" class="mb-0 ms-2">Femenino</label>
-                                        </div>
+                                <label class="form-label">Sexo</label>
+                                <div class="d-flex justify-content-between">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="sexo" id="masculino" value="masculino" required>
+                                        <label class="form-check-label" for="masculino">Masculino</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="sexo" id="femenino" value="femenino" required>
+                                        <label class="form-check-label" for="femenino">Femenino</label>
                                     </div>
                                 </div>
-
-                                @*Validación
-                                    <div class="invalid-feedback">
-                                        Debes seleccionar un género.
-                                    </div>*@
-
+                                <div class="invalid-feedback">Debes seleccionar un género.</div>
                             </div>
 
                             <div class="col-sm-6 mb-3">
@@ -218,15 +207,6 @@
 
                         </div>
 
-                        @*<div class="mb-3">
-                                <label for="tarjeta" class="form-label">Número de tarjeta</label>
-                                <div class="input-group">
-                                    <span class="input-group-text"><i class="bi bi-credit-card"></i></span>
-                                    <input type="text" class="form-control" id="datos_bancarios" name="datos_bancarios" placeholder="Número de tarjeta" pattern="\d{16}" maxlength="16" required>
-                                </div>
-                            </div>*@
-
-                        @**@
                         <div class="mb-3">
                             <label for="tarjeta" class="form-label">Número de tarjeta</label>
                             <div class="input-group has-validation">
