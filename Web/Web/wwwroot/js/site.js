@@ -16,7 +16,19 @@ $(document).ready(function () {
         }, 500); // Ajuste de tiempo
     });
 
-    $('#registroExitosoModal').modal('show');
+    var pageData = $('#page-data');
+    if (pageData.length > 0 && pageData.data('registro-exitoso')) {
+        //var nombreUsuario = pageData.data('nombre-usuario');
+        //$('#registroExitosoModal').find('.modal-title').text('¡Bienvenido ' + nombreUsuario + '!');
+        $('#registroExitosoModal').modal('show');
+    }
+
+    var pageDataLogin = $('#page-data-login');
+    if (pageDataLogin.length > 0 && pageDataLogin.data('inicio-sesion-exitoso')) {
+        //var nombreUsuario = pageDataLogin.data('nombre-usuario');
+        //$('#inicioSesionExitosoModal').find('.modal-title').text('¡Bienvenido de nuevo ' + nombreUsuario + '!');
+        $('#inicioSesionExitosoModal').modal('show');
+    }
 });
 
 document.addEventListener('DOMContentLoaded', function () {

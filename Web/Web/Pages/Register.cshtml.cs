@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using MySql.Data.MySqlClient;
+using Web.Model;
 
 
 namespace Web.Pages
@@ -23,10 +24,10 @@ namespace Web.Pages
         {
         }
 
-        public IActionResult OnPost(string nombre, string apellido, string correo, string datos_bancarios, string sexo, int edad, string localizacion, string user_name, string password)
+        public IActionResult OnPost(string nombre, string apellido, string correo, string datos_bancarios, string sexo, int edad, string localizacion, string user_name, string password, bool administrador = false)
         {
             string connectionString = _configuration.GetConnectionString("SorteosTecDB");
-            int idUsuario = 0;
+            int id_usuario = 0;
 
             using (var connection = new MySqlConnection(connectionString))
             {
@@ -54,10 +55,10 @@ namespace Web.Pages
                             commandUsuario.Parameters.AddWithValue("@Localizacion", localizacion);
 
                             // Ejecutar el comando y obtener el ID del usuario insertado
-                            idUsuario = Convert.ToInt32(commandUsuario.ExecuteScalar());
+                            id_usuario = Convert.ToInt32(commandUsuario.ExecuteScalar());
                         }
 
-                        if (idUsuario > 0)
+                        if (id_usuario > 0)
                         {
                             // Insertar en la tabla UserName
                             var queryUserName = @"
@@ -66,8 +67,8 @@ namespace Web.Pages
 
                             using (var commandUserName = new MySqlCommand(queryUserName, connection, transaction))
                             {
-                                commandUserName.Parameters.AddWithValue("@IdUsuario", idUsuario);
-                                commandUserName.Parameters.AddWithValue("@UserName", user_name);  // Asegúrate de que esta línea coincida
+                                commandUserName.Parameters.AddWithValue("@IdUsuario", id_usuario);
+                                commandUserName.Parameters.AddWithValue("@UserName", user_name);
                                 commandUserName.Parameters.AddWithValue("@Password", password);
 
                                 commandUserName.ExecuteNonQuery();
@@ -75,10 +76,22 @@ namespace Web.Pages
 
                             // Confirmar la transacción
                             transaction.Commit();
+
+                            HttpContext.Session.SetString("nombreUsuario", user_name); // Almacenar el nombre de usuario
+                            HttpContext.Session.SetString("passwordUsuario", password); // Almacenar la contraseña
                         }
 
-                        // Guardar el nombre en TempData
-                        TempData["NombreUsuario"] = nombre;
+                        // Almacenar en la sesión
+                        HttpContext.Session.SetInt32("id_usuario", id_usuario);
+                        HttpContext.Session.SetString("nombre", nombre);
+                        HttpContext.Session.SetString("apellido", apellido);
+                        HttpContext.Session.SetString("correo", correo);
+                        HttpContext.Session.SetString("datos_bancarios", datos_bancarios);
+                        HttpContext.Session.SetString("sexo", sexo);
+                        HttpContext.Session.SetInt32("edad", edad);
+                        HttpContext.Session.SetString("localizacion", localizacion);
+                        HttpContext.Session.SetInt32("administrador", administrador ? 1 : 0);
+
 
                         // Redireccionar a la página de inicio o de éxito
                         return RedirectToPage("/Index", new { registroExitoso = true });

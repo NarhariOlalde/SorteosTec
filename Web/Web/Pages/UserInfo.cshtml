@@ -1,0 +1,50 @@
+﻿@page
+@model Web.Pages.UserInfoModel
+@{
+}
+
+<div class="container d-flex justify-content-center align-items-center">
+
+    <div class="card">
+
+        <div class="upper">
+            <img src="images/info-background.jpg" class="img-fluid max-w-300">
+        </div>
+
+        <div class="user text-center">
+            <div class="profile">
+                <img src="images/person.png" class="rounded-circle" width="200">
+            </div>
+        </div>
+
+
+        <div class="mt-1 mb-3 text-center">
+            @if (Model.Administrador == true)
+            {
+                <div class="mb-2">
+                    <h3 class="text-primary">ADMINISTRADOR</h3>
+                </div>
+            }
+            <h4 class="mb-0">@Model.Nombre  @Model.Apellido - @Model.nombreUsuario</h4>
+            <span class="text-muted d-block mb-3">@Model.Localizacion - @Model.Edad años</span>
+
+            <div class="mb-2">
+                <h6 class="mb-0">Correo electronico</h6>
+                <span>@Model.Correo</span>
+            </div>
+
+            <div class="mb-2">
+                <h6 class="mb-0">Sexo</h6>
+                <span>@Model.Sexo</span>
+            </div>
+
+            <div class="mb-2">
+                <h6 class="mb-0">Tarjeta asociada</h6>
+                <span>@Model.DatosBancarios</span>
+            </div>
+
+            <a asp-area="" asp-page="/Admin"> <i class="bi bi-person-gear"></i> Ir al panel de administrador</a>
+        </div>
+    </div>
+
+</div>

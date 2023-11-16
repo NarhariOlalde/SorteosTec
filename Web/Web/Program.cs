@@ -5,9 +5,18 @@ using MySql.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(3); // Tiempo de inactividad
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
+
+builder.Services.AddHttpContextAccessor();
+
 builder.Services.AddRazorPages();
-
-
 
 builder.Services.AddControllers();
 
@@ -22,22 +31,23 @@ if (!app.Environment.IsDevelopment())
     app.UseDeveloperExceptionPage();
 }
 
-app.UseRouting();
-app.UseEndpoints(endpoints =>
-{
-    endpoints.MapRazorPages();
-    endpoints.MapControllers();
-});
-
-
 app.UseHttpsRedirection();
+
 app.UseStaticFiles();
+
+app.UseSession();
 
 app.UseRouting();
 
 app.UseAuthorization();
 
 app.MapRazorPages();
+
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapRazorPages();
+    endpoints.MapControllers();
+});
 
 app.Run();
 

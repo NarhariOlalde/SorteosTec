@@ -250,6 +250,11 @@ body, p, a, li, span, div {
 }
 
 /* Utilities */
+.max-w-100 {
+    max-width: 100px;
+    margin: auto;
+}
+
 .max-w-300 {
     max-width: 300px;
     margin: auto;

@@ -1,4 +1,21 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+
+@{
+    var isLoggedIn = HttpContextAccessor.HttpContext.Session.GetString("nombre") != null;
+
+    var idUsuario = HttpContextAccessor.HttpContext.Session.GetInt32("id_usuario");
+    var nombre = HttpContextAccessor.HttpContext.Session.GetString("nombre");
+    var apellido = HttpContextAccessor.HttpContext.Session.GetString("apellido");
+    var correo = HttpContextAccessor.HttpContext.Session.GetString("correo");
+    var datosBancarios = HttpContextAccessor.HttpContext.Session.GetString("datos_bancarios");
+    var sexo = HttpContextAccessor.HttpContext.Session.GetString("sexo");
+    var edad = HttpContextAccessor.HttpContext.Session.GetInt32("edad");
+    var localizacion = HttpContextAccessor.HttpContext.Session.GetString("localizacion");
+    var esAdministrador = HttpContextAccessor.HttpContext.Session.GetInt32("administrador") == 1;
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -37,11 +54,30 @@
                         <li class="nav-item">
                             <a class="nav-link text-light" asp-area="" asp-page="/Game"><i class="bi bi-joystick"></i> Juego</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
-                                <i class="bi bi-person-bounding-box"></i> Iniciar sesión
-                            </a>
-                        </li>
+
+                        @if (isLoggedIn)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-light" asp-page="/UserInfo">
+                                    <i class="bi bi-person-circle"></i> @nombre
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link text-light" asp-page="/Logout">
+                                    <i class="bi bi-box-arrow-right"></i> Cerrar sesión
+                                </a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-light" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
+                                    <i class="bi bi-person-bounding-box"></i> Iniciar sesión
+                                </a>
+                            </li>
+                        }
+
                     </ul>
                 </div>
             </div>
@@ -59,7 +95,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="text-center">
-                        <form method="post" asp-page="/LoginModal" class="row gx-3 gy-2 align-items-center">
+                        <form method="post" asp-page="/Login" class="row gx-3 gy-2 align-items-center">
                             <div class="col-sm-6">
                                 <label class="visually-hidden" for="user_name">Username</label>
                                 <div class="input-group">
@@ -183,6 +219,7 @@
                                 <label for="edad" class="form-label">Edad</label>
                                 <select id="edad" name="edad" class="form-select" required>
                                     <option value="" disabled>Selecciona tu edad...</option>
+
                                     @{
                                         var edades = Enumerable.Range(18, 53);
 
@@ -191,6 +228,7 @@
                                             <option value="@edad">@edad</option>
                                         }
                                     }
+
                                 </select>
                                 <div class="invalid-feedback">
                                     No has seleccionado tu edad.
@@ -254,7 +292,11 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2023 - Sorteos Tec - <a asp-area="" asp-page="/Admin"><i class="bi bi-person-gear"></i> Administrador</a>
+            &copy; 2023 - Sorteos Tec
+            @if (esAdministrador == true)
+            {
+                <a asp-area="" asp-page="/Admin"> <i class="bi bi-person-gear"></i> Administrador</a>
+            }
         </div>
     </footer>
 

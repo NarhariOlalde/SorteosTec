@@ -13,6 +13,7 @@ namespace Web.Model
         public string sexo { get; set; } = string.Empty;
         public int edad { get; set; } = 0;
         public string localizacion { get; set; } = string.Empty;
+        public bool administrador { get; set; } = false;
 
         public Usuario()
         {
