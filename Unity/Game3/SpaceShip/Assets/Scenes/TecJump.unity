@@ -134,7 +134,7 @@ PrefabInstance:
     - target: {fileID: -6234168340311177603, guid: 179c8827ad4be034db2b350f856536bd, type: 3}
       propertyPath: bounce
       value: 
-      objectReference: {fileID: 8300000, guid: 51d8d737d8506fd4bbe44d5a63342abf, type: 3}
+      objectReference: {fileID: 8300000, guid: 4bd01c105d0d81247b79f94cd48279df, type: 3}
     - target: {fileID: 493986640592517095, guid: 179c8827ad4be034db2b350f856536bd, type: 3}
       propertyPath: m_Size.y
       value: 0.9
@@ -291,7 +291,7 @@ PrefabInstance:
     - target: {fileID: -6234168340311177603, guid: 179c8827ad4be034db2b350f856536bd, type: 3}
       propertyPath: bounce
       value: 
-      objectReference: {fileID: 8300000, guid: 51d8d737d8506fd4bbe44d5a63342abf, type: 3}
+      objectReference: {fileID: 8300000, guid: 4bd01c105d0d81247b79f94cd48279df, type: 3}
     - target: {fileID: 493986640592517095, guid: 179c8827ad4be034db2b350f856536bd, type: 3}
       propertyPath: m_Size.y
       value: 0.9
@@ -624,7 +624,7 @@ PrefabInstance:
     - target: {fileID: -6234168340311177603, guid: 179c8827ad4be034db2b350f856536bd, type: 3}
       propertyPath: bounce
       value: 
-      objectReference: {fileID: 8300000, guid: 51d8d737d8506fd4bbe44d5a63342abf, type: 3}
+      objectReference: {fileID: 8300000, guid: 4bd01c105d0d81247b79f94cd48279df, type: 3}
     - target: {fileID: 493986640592517095, guid: 179c8827ad4be034db2b350f856536bd, type: 3}
       propertyPath: m_Size.y
       value: 0.9
@@ -772,8 +772,8 @@ Transform:
   m_GameObject: {fileID: 1583722519}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0491, y: 3.6977, z: 0}
-  m_LocalScale: {x: 65.248184, y: 42.87704, z: 1}
+  m_LocalPosition: {x: 0.2452, y: 2.4773, z: 0}
+  m_LocalScale: {x: 1.5497221, y: 1.6200967, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 772376940}
@@ -819,7 +819,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: -1438176632, guid: cdbd8c625b6864fdc9ef8e1b85c77c8b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0dd8ad8fb544b594182ad88798f3035c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -885,6 +885,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8472607802684962606, guid: 5f52d3db8a6d88e44b155c0e25ca1c6f, type: 3}
+      propertyPath: superbounce
+      value: 
+      objectReference: {fileID: 8300000, guid: 3ec50290f6cefc746a7f33d5f9d804af, type: 3}
     - target: {fileID: 5005847114283888068, guid: 5f52d3db8a6d88e44b155c0e25ca1c6f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.26
@@ -929,10 +933,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: plataforma_bounce (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 8436281721727538537, guid: 5f52d3db8a6d88e44b155c0e25ca1c6f, type: 3}
-      propertyPath: m_Size.y
-      value: 0.9
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -949,7 +949,7 @@ PrefabInstance:
     - target: {fileID: -6234168340311177603, guid: 179c8827ad4be034db2b350f856536bd, type: 3}
       propertyPath: bounce
       value: 
-      objectReference: {fileID: 8300000, guid: 51d8d737d8506fd4bbe44d5a63342abf, type: 3}
+      objectReference: {fileID: 8300000, guid: 4bd01c105d0d81247b79f94cd48279df, type: 3}
     - target: {fileID: 493986640592517095, guid: 179c8827ad4be034db2b350f856536bd, type: 3}
       propertyPath: m_Size.y
       value: 0.9
@@ -1127,15 +1127,7 @@ PrefabInstance:
     - target: {fileID: -6234168340311177603, guid: 179c8827ad4be034db2b350f856536bd, type: 3}
       propertyPath: bounce
       value: 
-      objectReference: {fileID: 8300000, guid: 51d8d737d8506fd4bbe44d5a63342abf, type: 3}
-    - target: {fileID: -6234168340311177603, guid: 179c8827ad4be034db2b350f856536bd, type: 3}
-      propertyPath: source
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 493986640592517095, guid: 179c8827ad4be034db2b350f856536bd, type: 3}
-      propertyPath: m_Size.y
-      value: 0.9
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: 4bd01c105d0d81247b79f94cd48279df, type: 3}
     - target: {fileID: 3870885411568979643, guid: 179c8827ad4be034db2b350f856536bd, type: 3}
       propertyPath: m_Name
       value: plataforma_normal

@@ -37,7 +37,7 @@ public class fallingObject : MonoBehaviour
             }
             GameObject.Destroy(this.gameObject);
             GameBasketController.Instance.UIControl.AddPoints(points);
-            AudioSource.PlayClipAtPoint(congrats, Camera.main.transform.position, 0.5f);
+            AudioSource.PlayClipAtPoint(congrats, Camera.main.transform.position, 0.05f);
         }
     }
 }

@@ -36,7 +36,7 @@ public class AsteroidBehaviour : MonoBehaviour
 	    GameObject.Destroy(this.gameObject);
 	    PlayerPrefs.SetInt("score", PlayerPrefs.GetInt("score", 0) + destroy_score);
 	    Debug.Log(PlayerPrefs.GetInt("score", 0).ToString());
-        AudioSource.PlayClipAtPoint(explosion, Camera.main.transform.position, 0.5f);
+        AudioSource.PlayClipAtPoint(explosion, Camera.main.transform.position, 0.05f);
 
 	}
     }

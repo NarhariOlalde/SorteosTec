@@ -133,6 +133,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3198520180254f4b90a595cae4116d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  congrats: {fileID: 8300000, guid: 87f789e33b1d7c04c844615dd35b35e6, type: 3}
+  congrats: {fileID: 8300000, guid: c1ed1b09434902f42b36fa76ceca23ee, type: 3}
   velocity: 4
   points: 5
