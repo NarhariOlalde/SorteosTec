@@ -6,55 +6,60 @@ using UnityEngine.EventSystems;
 
 public class ShopManagerScript : MonoBehaviour
 {
-
-
-
     public int[,] shopItems = new int[5,5];
     public int coins;
     public Text CoinsTXT;
-    // Start is called before the first frame update
+    public LootSystem lootSystem; // Reference to the LootSystem script
+
     void Start()
     {
-	coins = PlayerPrefs.GetInt("total_score", 0);
+        // Initialize coins and update UI
+        coins = PlayerPrefs.GetInt("total_score", 0);
         CoinsTXT.text = "Puntos: " + coins.ToString();
 
-        shopItems[1, 1] = 1;
-        shopItems[1, 2] = 2;
-        shopItems[1, 3] = 3;
-        shopItems[1, 4] = 4;
-        //Price
-        shopItems[2, 1] = 10;
-        shopItems[2, 2] = 20;
-        shopItems[2, 3] = 30;
-        shopItems[2, 4] = 40;
-        //QTY
-        shopItems[3, 1] = 0;
-        shopItems[3, 2] = 0;
-        shopItems[3, 3] = 0;
-        shopItems[3, 4] = 0;
+        // Initialize shop items (ID and price for two loot boxes)
+        shopItems[1, 1] = 1; // ID for Loot Box 1
+        shopItems[1, 2] = 2; // ID for Loot Box 2
+
+        shopItems[2, 1] = 1; // Price for Loot Box 1
+        shopItems[2, 2] = 2; // Price for Loot Box 2
     }
 
-
-
-    public void Buy() { 
-    
-        GameObject ButtonRef = GameObject.FindGameObjectWithTag("Event").GetComponent<EventSystem>().currentSelectedGameObject;
-
-        if (coins >= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().ItemID]) {
-
-            coins -= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().ItemID];
-
- 
-
-            CoinsTXT.text = "Puntos: " + coins.ToString();
-
-            ButtonRef.GetComponent<ButtonInfo>().QuantityTxt.text = shopItems[3, ButtonRef.GetComponent<ButtonInfo>().ItemID]++.ToString() ;
-	    PlayerPrefs.SetInt("total_score", coins);
-        }
-    }
-    // Update is called once per frame
-    void Update()
+    public void Buy()
     {
-        
+        GameObject buttonRef = EventSystem.current.currentSelectedGameObject;
+        if (buttonRef != null)
+        {
+            ButtonInfo buttonInfo = buttonRef.GetComponent<ButtonInfo>();
+            if (buttonInfo != null)
+            {
+                int itemID = buttonInfo.ItemID;
+                if (coins >= shopItems[2, itemID])
+                {
+                    // Subtract the cost and update UI
+                    coins -= shopItems[2, itemID];
+                    PlayerPrefs.SetInt("total_score", coins);
+                    CoinsTXT.text = "Puntos: " + coins.ToString();
+
+                    // Call the Spawner method from LootSystem
+                    lootSystem.SpawnFromLootBox(itemID - 1); // Subtract 1 to match the array index
+
+                    // Optional: Update quantity or other UI elements
+                    // buttonInfo.QuantityTxt.text = "New Quantity Here";
+                }
+                else
+                {
+                    Debug.Log("Not enough coins to buy the item!");
+                }
+            }
+            else
+            {
+                Debug.LogError("ButtonInfo component is missing from the button");
+            }
+        }
+        else
+        {
+            Debug.LogError("No button was clicked or the button is missing an EventSystem tag");
+        }
     }
 }
