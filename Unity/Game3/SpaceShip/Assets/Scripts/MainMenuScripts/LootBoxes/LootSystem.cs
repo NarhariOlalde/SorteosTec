@@ -1,25 +1,38 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class ItemToSpawn
 {
-    public GameObject item; // The actual item GameObject that will be spawned.
-    public float spawnRate; // The rate (or probability) at which this item will be spawned.
+    public GameObject item;
+    public float spawnRate;
 }
 
 [System.Serializable]
 public class LootBox
 {
-    public ItemToSpawn[] items; // An array of items that this loot box can spawn.
+    public ItemToSpawn[] items;
 }
 
 public class LootSystem : MonoBehaviour
 {
     public LootBox[] lootBoxes; // An array to hold different types of loot boxes.
+    public GameObject itemRewardPanel; // The UI panel to show the reward
 
-    // Method to spawn an item from a specific loot box.
+    void Start()
+{
+    // Find the itemRewardPanel by name if not assigned
+    if (itemRewardPanel == null)
+    {
+        itemRewardPanel = GameObject.Find("itemRewardPanel");
+    }
+
+    // Initially, we don't want to show the panel
+    itemRewardPanel.SetActive(false);
+}
+
+
     public void SpawnFromLootBox(int boxIndex)
     {
         // Validate the boxIndex to make sure it's within the range of available loot boxes.
@@ -45,9 +58,33 @@ public class LootSystem : MonoBehaviour
             currentRate += item.spawnRate;
             if (randomPoint <= currentRate)
             {
-                Instantiate(item.item, transform.position, Quaternion.identity); // Spawn the item.
-                break; // Stop once we've spawned the item.
+                // Show the item reward panel instead of instantiating the item
+                ShowItemReward(item.item);
+                break; // Stop once we've displayed the item.
             }
         }
+    }
+
+    private void ShowItemReward(GameObject itemPrefab)
+    {
+        // Find the Image component that is named 'rewardSprite'
+        Image rewardImage = itemRewardPanel.transform.Find("rewardSprite").GetComponent<Image>();
+        if (rewardImage != null)
+        {
+            rewardImage.sprite = itemPrefab.GetComponent<SpriteRenderer>().sprite;
+            rewardImage.preserveAspect = true; // Preserve the sprite's aspect ratio
+            itemRewardPanel.SetActive(true); // Show the panel with the item's sprite
+        }
+        else
+        {
+            Debug.LogError("rewardSprite Image not found in itemRewardPanel.");
+        }
+    }
+
+
+    private IEnumerator HidePanelAfterDelay(GameObject panel, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        panel.SetActive(false);
     }
 }
