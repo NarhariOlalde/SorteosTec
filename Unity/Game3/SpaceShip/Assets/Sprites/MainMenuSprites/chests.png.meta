@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -136,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: chestmadera0
+      name: chests_0
       rect:
         serializedVersion: 2
-        x: 521
-        y: 748
-        width: 371
-        height: 281
+        x: 522
+        y: 750
+        width: 369
+        height: 278
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea5530945dd6c2241999268c31b0953e
-      internalID: -1305188691
+      spriteID: 35f7d0e740aebb24a8c1d9c8937bbe35
+      internalID: -1764946496
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: chestazul0
+      name: chests_1
       rect:
         serializedVersion: 2
-        x: 1386
-        y: 748
+        x: 1387
+        y: 750
+        width: 363
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d81d34646c1ac37419d013a69d5f51b9
+      internalID: -48358701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chests_2
+      rect:
+        serializedVersion: 2
+        x: 2036
+        y: 750
         width: 366
-        height: 293
+        height: 290
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +192,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57e15ed6f4e17894c9d9814cbbc02245
-      internalID: -767967031
+      spriteID: ff82ed7eaab59774cbf3d10b12453593
+      internalID: -1012455612
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: chestdorado0
+      name: chests_3
       rect:
         serializedVersion: 2
-        x: 2035
-        y: 748
+        x: 522
+        y: 298
         width: 369
-        height: 293
+        height: 290
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,20 +213,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f44349c8abb10b34bb27b2fd6379fa5a
-      internalID: -85012368
+      spriteID: 817a0b64f3e09ff4ea4bf79af324c358
+      internalID: 1555774286
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: chestmadera1
+      name: chests_4
       rect:
         serializedVersion: 2
-        x: 521
-        y: 297
-        width: 371
-        height: 293
+        x: 1399
+        y: 261
+        width: 366
+        height: 303
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,20 +234,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b894cc4f19b14fd4b9439968f5d894de
-      internalID: -1765656410
+      spriteID: bf882d4263c302e4f9668d3ef4c57cdc
+      internalID: -279225299
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: chestazul1
+      name: chests_5
       rect:
         serializedVersion: 2
-        x: 1398
-        y: 260
-        width: 368
-        height: 305
+        x: 2036
+        y: 261
+        width: 366
+        height: 291
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -234,29 +255,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 165240fa097b43843aed509d7a6d3c19
-      internalID: -1403226347
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: chestdorado1
-      rect:
-        serializedVersion: 2
-        x: 2035
-        y: 260
-        width: 369
-        height: 293
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 32601acf496d4474d826bcb6351c8edb
-      internalID: -1908189663
+      spriteID: 8472223ce43d9b644870cc490694c210
+      internalID: 337903170
       vertices: []
       indices: 
       edges: []
@@ -272,12 +272,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      chestazul0: -767967031
-      chestazul1: -1403226347
-      chestdorado0: -85012368
-      chestdorado1: -1908189663
-      chestmadera0: -1305188691
-      chestmadera1: -1765656410
+      chests_0: -1764946496
+      chests_1: -48358701
+      chests_2: -1012455612
+      chests_3: 1555774286
+      chests_4: -279225299
+      chests_5: 337903170
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
