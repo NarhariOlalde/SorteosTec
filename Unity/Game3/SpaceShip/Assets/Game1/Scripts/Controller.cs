@@ -15,8 +15,38 @@ public class Controller : MonoBehaviour
     private float fallLimit = 18.0f; // La distancia máxima que el jugador puede caer por debajo de topScore
 
     public Text ScoreText;
+    public Sprite SpentLife;
+    public Image[] livesImage;
+
+    public void UpdateLives()
+    {
+	int lives = PlayerPrefs.GetInt("lives", 3);
+	if (lives == 3)
+	{
+
+	}
+	else if (lives == 2)
+	{
+	    livesImage[2].sprite = SpentLife;
+	}
+	else if (lives == 1)
+	{
+	    livesImage[2].sprite = SpentLife;
+	    livesImage[1].sprite = SpentLife;
+	}
+	else if (lives == 0)
+	{
+	    livesImage[2].sprite = SpentLife;
+	    livesImage[1].sprite = SpentLife;
+	    livesImage[0].sprite = SpentLife;
+	}
+    }
 
     // Start is called before the first frame update
+    void Awake()
+    {
+	UpdateLives();
+    }
     void Start()
     {
 	Speed *= PlayerPrefs.GetFloat("difficulty_multiplier", 1f);
