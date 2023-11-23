@@ -1,30 +1,35 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Index";
 }
+
+<div class="container text-center">
+    <a href="/Stats"><button type="button" class="btn btn-primary my-4 w-100 max-w-600">STATS</button></a>
+</div>
 
 @if (Model.RegistroExitoso)
 {
     <div id="page-data" data-registro-exitoso="true"></div>
 
     <!-- Modal de Registro Exitoso -->
-    <div class="modal fade" id="registroExitosoModal" tabindex="-1" aria-labelledby="registroExitosoModalLabel" aria-hidden="true">
+    <div class="modal fade" id="registroExitosoModal" tabindex="-1" aria-labelledby="registroExitosoModalLabel"
+    aria-hidden="true">
 
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header bg-success text-white">
-                    <h3 class="modal-title" id="loginModalLabel">¡Bienvenido @Model.Nombre!</h3>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    ¡Felicidades! Tu cuenta fue creada <span class="text-success">exitosamente</span>.<br />
-                    Ahora tienes acceso al nuevo juego de Sorteos Tec y a las compras dentro de este.
-                </div>
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-success text-white">
+                <h3 class="modal-title" id="loginModalLabel">¡Bienvenido @Model.Nombre!</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ¡Felicidades! Tu cuenta fue creada <span class="text-success">exitosamente</span>.<br />
+                Ahora tienes acceso al nuevo juego de Sorteos Tec y a las compras dentro de este.
             </div>
         </div>
-
     </div>
+
+</div>
 }
 
 @if (Model.InicioSesionExitoso)
@@ -32,20 +37,21 @@
     <div id="page-data-login" data-inicio-sesion-exitoso="true"></div>
 
     <!-- Modal de Inicio de Sesión Exitoso -->
-    <div class="modal fade" id="inicioSesionExitosoModal" tabindex="-1" aria-labelledby="inicioSesionExitosoModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header bg-success text-white">
-                    <h3 class="modal-title" id="loginModalLabel">¡Bienvenido @Model.Nombre!</h3>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    Inicio de sesión <span class="text-success">exitoso</span>.<br />
-                    Ahora tienes acceso al nuevo juego de Sorteos Tec y a las compras dentro de este.
-                </div>
+    <div class="modal fade" id="inicioSesionExitosoModal" tabindex="-1" aria-labelledby="inicioSesionExitosoModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-success text-white">
+                <h3 class="modal-title" id="loginModalLabel">¡Bienvenido @Model.Nombre!</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Inicio de sesión <span class="text-success">exitoso</span>.<br />
+                Ahora tienes acceso al nuevo juego de Sorteos Tec y a las compras dentro de este.
             </div>
         </div>
     </div>
+</div>
 }
 
 
@@ -54,26 +60,31 @@
     <div id="page-data-error" data-error-contraseña="true"></div>
 
     <!-- Modal de Error de Contraseña -->
-    <div class="modal fade" id="errorContraseñaModal" tabindex="-1" aria-labelledby="errorContraseñaModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header bg-danger text-white">
-                    <h3 class="modal-title" id="errorModalLabel">Error al iniciar sesión</h3>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                     La <span class="text-danger">contraseña</span> o <span class="text-danger">usuario</span> ingresados son <span class="text-danger">incorrectos</span>.<br />
-                    Por favor, intenta nuevamente.
-                </div>
+    <div class="modal fade" id="errorContraseñaModal" tabindex="-1" aria-labelledby="errorContraseñaModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-danger text-white">
+                <h3 class="modal-title" id="errorModalLabel">Error al iniciar sesión</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                La <span class="text-danger">contraseña</span> o <span class="text-danger">usuario</span> ingresados son
+                <span class="text-danger">incorrectos</span>.<br />
+                Por favor, intenta nuevamente.
             </div>
         </div>
     </div>
+</div>
 }
 
 <div class="container">
 
     <h1 class="text-center my-4 text-primary">¿Estás listo para jugar y ganar con Sorteos Tec?</h1>
-    <p class="text-center my-4 max-w-900"><span class="fw-bold">¡Bienvenido a Sorteos Tec!</span> Hemos diseñado un <span class="fw-bold">juego exclusivo para ti</span>, lleno de desafíos y recompensas. Es una forma amena de conectarte con nosotros y tener la oportunidad de <span class="fw-bold">ganar premios</span>. <span class="fst-italic"><br />¡Anímate, juega y descubre lo que Sorteos Tec tiene para ti!</span></p>
+    <p class="text-center my-4 max-w-900"><span class="fw-bold">¡Bienvenido a Sorteos Tec!</span> Hemos diseñado un
+        <span class="fw-bold">juego exclusivo para ti</span>, lleno de desafíos y recompensas. Es una forma amena de
+        conectarte con nosotros y tener la oportunidad de <span class="fw-bold">ganar premios</span>. <span
+            class="fst-italic"><br />¡Anímate, juega y descubre lo que Sorteos Tec tiene para ti!</span></p>
 
     <div class="container text-center mt-4">
         <h2>¡Navega los juegos con solo dos teclas!</h2>

@@ -1,0 +1,102 @@
+﻿@page
+@model StatsModel
+@{
+    ViewData["Title"] = "Stats page";
+}
+
+<h1 class="text-primary"><i class="bi bi-joystick"></i> Estadísticas del juego</h1>
+
+<div class="container m-4 p-0 text-center">
+    <div class="row">
+        <div class="col-md-8">
+            <table class="table table-sm table-striped table-hover caption-top table table-bordered">
+                <caption class="text-center">Top mejores puntuaciones globales</caption>
+                <thead class="table-primary">
+                    <tr>
+                        <th scope="col">Posición</th>
+                        <th scope="col">Nombre de usuario</th>
+                        <th scope="col">Puntuación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>@@CarlosDC</td>
+                        <td>453,123</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>@@SofiaCD</td>
+                        <td>345,214</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>@@MariaDG</td>
+                        <td>336,185</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-4 d-flex flex-column justify-content-between p-0 ps-3 pe-3">
+            <div class="financial-card mb-2 flex-grow-1 d-flex align-items-center justify-content-center">
+                <div>
+                    <small>Mi puntuación</small>
+                    <h2>1000 puntos</h2>
+                </div>
+            </div>
+            @* <div class="col-md-4 d-flex align-items-center">
+            <div class="financial-card w-100">
+            <small>Mi puntuación </small>
+            <h2>1000 puntos</h2>
+            </div>
+            </div> *@
+        </div>
+    </div>
+    <div class="row">
+    <div class="col-md-6 my-2">
+        <div class="financial-card h-100 d-flex flex-column justify-content-between">
+            <small>Mis referidos</small>
+            <h2>3 referidos totales</h2>
+        </div>
+    </div>
+    <div class="col-md-6 my-2">
+        <div class="financial-card h-100 d-flex flex-column justify-content-between">
+            <small>Mis llaves</small>
+            <h2>20 llaves obtenidas</h2>
+        </div>
+    </div>
+</div>
+
+    <div class="row my-2">
+        <div class="col">
+            <table class="table table-sm table-striped table-hover caption-top table table-bordered">
+                <caption class="text-center">Mis transacciones</caption>
+                <thead class="table-primary">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Concepto</th>
+                        <th scope="col">Costo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Skin borregos football</td>
+                        <td>$25 MXN</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Mapa Banorte</td>
+                        <td>$35 MXN</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Vida extra</td>
+                        <td>$10 MXN</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
