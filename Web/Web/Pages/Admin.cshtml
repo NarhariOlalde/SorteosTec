@@ -2,34 +2,164 @@
 @model Web.Pages.AdminModel
 @{
 }
-<h1>Usuarios</h1>
+<h1 class="text-primary">Dashboard de administración</h1>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Correo</th>
-            <th>Tarjeta</th>
-            <th>Sexo</th>
-            <th>Edad</th>
-            <th>Localización</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var usuario in Model.Usuarios)
-        {
-            <tr>
-                <td>@usuario.id_usuario</td>
-                <td>@usuario.nombre</td>
-                <td>@usuario.apellido</td>
-                <td>@usuario.correo</td>
-                <td>@usuario.datos_bancarios</td>
-                <td>@usuario.sexo</td>
-                <td>@usuario.edad</td>
-                <td>@usuario.localizacion</td>
-            </tr>
+<div class="max-w-900">
+
+    <div class="container m-3 text-center">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="financial-card">
+                    <small>Cantidad de usuarios activos</small>
+                    <h2>@Model.TotalUsuarios usuarios</h2>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="financial-card">
+                    <small>Máxima puntuación actual</small>
+                    <h2>@Model.MaximaPuntuacion puntos</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <!-- Columna para el primer gráfico (50% del ancho) -->
+            <div class="col-md-6 text-center">
+                <canvas id="genderChart"></canvas>
+            </div>
+
+            <!-- Columna para el segundo gráfico (50% del ancho) -->
+            <div class="col-md-6 text-center">
+                <canvas id="ageChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<script>
+    // Gráficos
+    var genderCtx = document.getElementById('genderChart').getContext('2d');
+    var ageCtx = document.getElementById('ageChart').getContext('2d');
+
+    // Datos de distribución de género
+    var genderData = @Html.Raw(Json.Serialize(ViewData["GenderDistribution"]));
+
+    // Datos de distribución de edad
+    var ageData = @Html.Raw(Json.Serialize(ViewData["AgeDistribution"]));
+
+    // Gráfico de distribución de género
+    var genderChart = new Chart(genderCtx, {
+        type: 'doughnut',
+        data: {
+            labels: Object.keys(genderData),
+            datasets: [{
+                data: Object.values(genderData),
+                backgroundColor: [ // Define colores para hombres y mujeres
+                    'rgb(54, 162, 235)', // Azul para hombres
+                    'rgb(255, 99, 132)'  // Rojo para mujeres
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Distribución de género'
+                },
+                datalabels: {
+                    formatter: (value, ctx) => {
+                        const datapoints = ctx.chart.data.datasets[0].data;
+                        const total = datapoints.reduce((total, datapoint) => total + datapoint, 0);
+                        const percentage = value / total * 100;
+                        return percentage.toFixed(2) + "%";
+                    },
+                    color: '#fff',
+                },
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        generateLabels: (chart) => {
+                            const data = chart.data;
+                            return data.labels.map((label, index) => {
+                                const value = data.datasets[0].data[index];
+                                const total = data.datasets[0].data.reduce((a, b) => a + b, 0);
+                                const percentage = ((value / total) * 100).toFixed(2) + '%';
+                                return {
+                                    text: label + ' - ' + percentage,
+                                    fillStyle: data.datasets[0].backgroundColor[index],
+                                    lineWidth: 0
+                                };
+                            });
+                        }
+                    }
+                }
+            },
+            responsive: true,
+            maintainAspectRatio: true
         }
-    </tbody>
-</table>
+    });
+
+    // Gráfico de los rangos de edad en la distribución de usuarios
+    var ageChart = new Chart(ageCtx, {
+        type: 'bar',
+        data: {
+            labels: Object.keys(ageData),
+            datasets: [{
+                label: 'Cantidad de usuarios',
+                data: Object.values(ageData),
+                backgroundColor: [ // Define colores para cada rango de edad
+                    'rgb(255, 159, 64)', // Naranja para 18-27
+                    'rgb(255, 205, 86)', // Amarillo para 28-37
+                    'rgb(75, 192, 192)', // Verde para 38-47
+                    'rgb(54, 162, 235)', // Azul para 48-57
+                    'rgb(153, 102, 255)', // Morado para 58-67
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Distribución de edad'
+                },
+                datalabels: {
+                    formatter: (value, ctx) => {
+                        const datapoints = ctx.chart.data.datasets[0].data;
+                        const total = datapoints.reduce((total, datapoint) => total + datapoint, 0);
+                        const percentage = value / total * 100;
+                        return percentage.toFixed(2) + "%";
+                    },
+                    color: '#fff',
+                },
+                legend: {
+                    display: false
+                }
+            },
+            responsive: true,
+            maintainAspectRatio: true,
+            aspectRatio: 1,
+            scales: {
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Años' // Título para el eje X
+                    }
+                },
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Cantidad de usuarios' // Título para el eje Y
+                    }
+                }
+            }
+        }
+    });
+
+</script>

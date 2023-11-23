@@ -102,7 +102,7 @@ namespace Web.Pages
                         transaction.Rollback();
 
                         // Manejar el caso de error, devolver un mensaje de error o redirigir a una página de error
-                        return Page();
+                        return RedirectToPage("/Index", new { registroExitoso = false, errorRegistro = true });
                     }
 
                 }

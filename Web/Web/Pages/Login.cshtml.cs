@@ -65,11 +65,14 @@ namespace Web.Pages.Shared
                         HttpContext.Session.SetString("localizacion", usuario.localizacion);
                         HttpContext.Session.SetInt32("administrador", usuario.administrador ? 1 : 0);
 
+                        HttpContext.Session.SetString("nombreUsuario", nombre); // Almacenar el nombre de usuario
+                        HttpContext.Session.SetString("passwordUsuario", password); // Almacenar la contraseña
+
                         return RedirectToPage("/Index", new { InicioSesionExitoso = true });
                     }
                     else
                     {
-                        return RedirectToPage("/Game");
+                        return RedirectToPage("/Index", new { InicioSesionExitoso = false, ErrorContraseña = true });
                     }
                 }
             }

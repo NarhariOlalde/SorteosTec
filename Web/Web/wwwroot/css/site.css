@@ -243,11 +243,11 @@ body, p, a, li, span, div {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-}
+    .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
 
 /* Utilities */
 .max-w-100 {
@@ -274,3 +274,49 @@ body, p, a, li, span, div {
     max-width: 1200px;
     margin: auto;
 }
+
+.max-h-100 {
+    max-width: 100px;
+    margin: auto;
+}
+
+.max-h-300 {
+    max-width: 300px;
+    margin: auto;
+}
+
+.max-h-600 {
+    max-width: 600px;
+    margin: auto;
+}
+
+.max-h-900 {
+    max-width: 900px;
+    margin: auto;
+}
+
+.max-h-1200 {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/*Financial cards*/
+.financial-card {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.financial-card h2 {
+    font-size: 2em;
+}
+
+.financial-card p {
+    font-size: 1.5em;
+}
+
+/*canvas {
+    width: 400px !important;
+    height: 400px !important;
+}*/

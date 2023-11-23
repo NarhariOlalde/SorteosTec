@@ -26,9 +26,10 @@
 
     </div>
 }
-else if (Model.InicioSesionExitoso == true)
+
+@if (Model.InicioSesionExitoso)
 {
-    <div id="page-data-login" data-inicio-sesion-exitoso="true" ></div>
+    <div id="page-data-login" data-inicio-sesion-exitoso="true"></div>
 
     <!-- Modal de Inicio de Sesión Exitoso -->
     <div class="modal fade" id="inicioSesionExitosoModal" tabindex="-1" aria-labelledby="inicioSesionExitosoModalLabel" aria-hidden="true">
@@ -41,6 +42,28 @@ else if (Model.InicioSesionExitoso == true)
                 <div class="modal-body">
                     Inicio de sesión <span class="text-success">exitoso</span>.<br />
                     Ahora tienes acceso al nuevo juego de Sorteos Tec y a las compras dentro de este.
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+@if (Model.ErrorContraseña)
+{
+    <div id="page-data-error" data-error-contraseña="true"></div>
+
+    <!-- Modal de Error de Contraseña -->
+    <div class="modal fade" id="errorContraseñaModal" tabindex="-1" aria-labelledby="errorContraseñaModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                    <h3 class="modal-title" id="errorModalLabel">Error al iniciar sesión</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                     La <span class="text-danger">contraseña</span> o <span class="text-danger">usuario</span> ingresados son <span class="text-danger">incorrectos</span>.<br />
+                    Por favor, intenta nuevamente.
                 </div>
             </div>
         </div>

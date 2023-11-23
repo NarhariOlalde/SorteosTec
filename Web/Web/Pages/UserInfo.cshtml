@@ -43,7 +43,10 @@
                 <span>@Model.DatosBancarios</span>
             </div>
 
-            <a asp-area="" asp-page="/Admin"> <i class="bi bi-person-gear"></i> Ir al panel de administrador</a>
+            @if (Model.Administrador == true)
+            {
+                <a asp-area="" asp-page="/Admin"> <i class="bi bi-person-gear"></i> Ir al panel de administrador</a>
+            }
         </div>
     </div>
 

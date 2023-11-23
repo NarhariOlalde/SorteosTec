@@ -16,34 +16,27 @@ $(document).ready(function () {
         }, 500); // Ajuste de tiempo
     });
 
+    // Asignar evento click al enlace del perfil de usuario para abrir el modal
+    $('a[data-bs-target="#userProfileModal"]').on('click', function () {
+        $('#userProfileModal').modal('show');
+    });
+
+
     var pageData = $('#page-data');
     if (pageData.length > 0 && pageData.data('registro-exitoso')) {
-        //var nombreUsuario = pageData.data('nombre-usuario');
-        //$('#registroExitosoModal').find('.modal-title').text('¡Bienvenido ' + nombreUsuario + '!');
         $('#registroExitosoModal').modal('show');
     }
 
     var pageDataLogin = $('#page-data-login');
     if (pageDataLogin.length > 0 && pageDataLogin.data('inicio-sesion-exitoso')) {
-        //var nombreUsuario = pageDataLogin.data('nombre-usuario');
-        //$('#inicioSesionExitosoModal').find('.modal-title').text('¡Bienvenido de nuevo ' + nombreUsuario + '!');
         $('#inicioSesionExitosoModal').modal('show');
     }
-});
 
-document.addEventListener('DOMContentLoaded', function () {
-    var myRadios = document.getElementsByName('sexo');
-    var setCheck;
-    var x = 0;
-    for (x = 0; x < myRadios.length; x++) {
-        myRadios[x].onclick = function () {
-            if (setCheck != this) {
-                setCheck = this;
-            } else {
-                this.checked = false;
-                setCheck = null;
-            }
-        };
+    var pageDataError = $('#page-data-error');
+    console.log("Error Data Length:", pageDataError.length); // Para depuración
+    console.log("Error Data:", pageDataError.data('error-contraseña'));
+    if (pageDataError.length > 0 && pageDataError.data('error-contraseña')) {
+        $('#errorContraseñaModal').modal('show');
     }
 });
 

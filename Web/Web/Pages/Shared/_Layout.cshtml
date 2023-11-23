@@ -13,6 +13,8 @@
     var edad = HttpContextAccessor.HttpContext.Session.GetInt32("edad");
     var localizacion = HttpContextAccessor.HttpContext.Session.GetString("localizacion");
     var esAdministrador = HttpContextAccessor.HttpContext.Session.GetInt32("administrador") == 1;
+
+    var nombreUsuario = HttpContextAccessor.HttpContext.Session.GetString("nombreUsuario");
 }
 
 <!DOCTYPE html>
@@ -33,6 +35,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">  @*Principal*@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">  @*Secundaria*@
+
+    @*JAVASCRIPT*@
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
@@ -57,11 +62,13 @@
 
                         @if (isLoggedIn)
                         {
+                            <!-- Accionador para el Modal UserInfo -->
                             <li class="nav-item">
-                                <a class="nav-link text-light" asp-page="/UserInfo">
+                                <a class="nav-link text-light" data-bs-toggle="modal" data-bs-target="#userProfileModal">
                                     <i class="bi bi-person-circle"></i> @nombre
                                 </a>
                             </li>
+
 
                             <li class="nav-item">
                                 <a class="nav-link text-light" asp-page="/Logout">
@@ -100,12 +107,12 @@
                                 <label class="visually-hidden" for="user_name">Username</label>
                                 <div class="input-group">
                                     <div class="input-group-text">@@</div>
-                                    <input type="text" class="form-control" name="Nombre" placeholder="Username" required>
+                                    <input type="text" class="form-control" name="Nombre" placeholder="Nombre de usuario" required>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <label class="visually-hidden" for="password">Password</label>
-                                <input type="password" class="form-control" name="Password" placeholder="Password" required>
+                                <input type="password" class="form-control" name="Password" placeholder="Contraseña" required>
                             </div>
                             <div class="col">
                                 <button type="submit" class="btn btn-primary w-100">Iniciar</button>
@@ -116,6 +123,7 @@
                 </div>
             </div>
         </div>
+
     </div>
 
     @*User creation form*@
@@ -223,9 +231,9 @@
                                     @{
                                         var edades = Enumerable.Range(18, 53);
 
-                                        foreach (var edad in edades)
+                                        foreach (var edadSelect in edades)
                                         {
-                                            <option value="@edad">@edad</option>
+                                            <option value="@edadSelect">@edad</option>
                                         }
                                     }
 
@@ -282,7 +290,57 @@
             </div>
         </div>
     </div>
-    @*User creation form close*@
+
+    @*UserInfo modal*@
+    <div class="modal fade" id="userProfileModal" tabindex="-1" aria-labelledby="userProfileModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header bg-light">
+                    <h3 class="modal-title text-primary" id="userProfileModalLabel">Perfil del Usuario</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <div class="text-center">
+                        <!-- User Image -->
+                        <div class="profile">
+                            <img src="images/person.png" class="rounded-circle" width="200">
+                        </div>
+
+                        <!-- User Info -->
+                        <h4 class="mb-0">@nombre @apellido - @nombreUsuario</h4>
+                        <span class="text-muted d-block mb-3">@localizacion - @edad años</span>
+                        <div class="mb-2">
+                            <h6 class="mb-0">Correo electronico</h6>
+                            <span>@correo</span>
+                        </div>
+                        <div class="mb-2">
+                            <h6 class="mb-0">Sexo</h6>
+                            <span>@sexo</span>
+                        </div>
+                        <div class="mb-2">
+                            <h6 class="mb-0">Tarjeta asociada</h6>
+                            <span>@datosBancarios</span>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer bg-light d-grid text-center">
+                    <!-- Admin Link -->
+                    @if (esAdministrador == true)
+                    {
+                        <a asp-area="" asp-page="/Admin"> <i class="bi bi-person-gear"></i> Ir al panel de administrador</a>
+                    }
+                </div>
+
+
+            </div>
+        </div>
+    </div>
 
     <div class="container">
         <main role="main" class="pb-3">
