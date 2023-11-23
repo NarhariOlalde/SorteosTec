@@ -3,7 +3,14 @@ guid: 4ae43b46e4ee5df6382a8ff3c5f6fd4f
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - corazon1_animator: {instanceID: 0}
+  - corazon2_animator: {instanceID: 0}
+  - corazon3_animator: {instanceID: 0}
+  - puntajeFinal: {instanceID: 0}
+  - loseSound: {instanceID: 0}
+  - SpentLife: {instanceID: 0}
+  - musicamenu2: {fileID: 8300000, guid: 3898733bf570c0e2e91996c318541640, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
