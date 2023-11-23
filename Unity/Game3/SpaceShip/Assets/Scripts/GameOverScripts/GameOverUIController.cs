@@ -15,6 +15,7 @@ public class GameOverUIController : MonoBehaviour
     private AudioSource[] allAudioSources;
     public Sprite SpentLife;
     public Image[] livesImage;
+	public AudioClip musicamenu2;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +31,7 @@ public class GameOverUIController : MonoBehaviour
         }
         //GameObject.FindGameObjectWithTag("Music").GetComponent<AudioManager>().StopMusic();
         AudioSource.PlayClipAtPoint(loseSound, Camera.main.transform.position, 0.5f);
+        AudioSource.PlayClipAtPoint(musicamenu2, Camera.main.transform.position, 0.05f);
         int currentScore = PlayerPrefs.GetInt("score", 0);
         PlayerPrefs.SetInt("total_score", PlayerPrefs.GetInt("total_score", 0) + currentScore);
         Debug.Log("TOTLA SCORE:" + PlayerPrefs.GetInt("total_score", 0).ToString());
