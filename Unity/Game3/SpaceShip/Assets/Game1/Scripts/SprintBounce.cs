@@ -29,7 +29,7 @@ public class SprintBounce : MonoBehaviour
 
         if (collision.gameObject.GetComponent<Rigidbody2D>().velocity.y <= 0)
         {
-            AudioSource.PlayClipAtPoint(superbounce, Camera.main.transform.position, 0.15f);
+            AudioSource.PlayClipAtPoint(superbounce, Camera.main.transform.position, 0.35f);
             collision.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector3.up * 1000f);
 
         }

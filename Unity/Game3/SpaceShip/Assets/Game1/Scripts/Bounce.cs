@@ -23,7 +23,7 @@ public class Bounce : MonoBehaviour
 
         if (collision.gameObject.GetComponent<Rigidbody2D>().velocity.y <= 0)
         {
-            AudioSource.PlayClipAtPoint(bounce, Camera.main.transform.position, 0.15f);
+            AudioSource.PlayClipAtPoint(bounce, Camera.main.transform.position, 0.35f);
 
 
             collision.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector3.up * 600f);
