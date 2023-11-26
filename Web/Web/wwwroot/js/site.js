@@ -100,16 +100,16 @@ document.getElementById('numeroTarjetaVisual').addEventListener('input', functio
 // // Dark mode
 const temaOscuro = () => {
     document.querySelector('body').setAttribute("data-bs-theme", "dark");
-    document.querySelector("#dl-icon").setAttribute("class", "text-light bi bi-sun-fill");
+    document.querySelector("#color-icon").setAttribute("class", "text-light bi bi-sun-fill");
 }
 
 const temaClaro = () => {
     document.querySelector('body').setAttribute("data-bs-theme", "light");
-    document.querySelector("#dl-icon").setAttribute("class", "text-light bi bi-moon-fill");
+    document.querySelector("#color-icon").setAttribute("class", "text-light bi bi-moon-fill");
 }
 
 const cambiarTema = () => {
-    document.querySelector('body').getAttribute("data-bs-theme") === "light" ? temaOscuro() : temaClaro();
+    document.body.classList.toggle("dark-theme");
 }
 
 // /*!
