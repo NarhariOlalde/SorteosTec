@@ -2191,6 +2191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpentLife: {fileID: -1277401541, guid: 05799c0b5fed42536a8c8297b2ad4e03, type: 3}
+  FullLife: {fileID: -660047757, guid: 05799c0b5fed42536a8c8297b2ad4e03, type: 3}
   livesImage:
   - {fileID: 1136053008}
   - {fileID: 1253803234}
