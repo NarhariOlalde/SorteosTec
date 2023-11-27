@@ -71,7 +71,15 @@ html {
     body, p, a, li, span, div {
     font-family: var(--fuente-secundaria);
     color: var(--color-letra);
-}
+    }
+
+    .card-body{
+        background-color: var(--color-fondo);
+    }
+
+    .modal-content{
+        background-color: var(--color-fondo);
+    }
 
 
 /* Colores de fondo */
