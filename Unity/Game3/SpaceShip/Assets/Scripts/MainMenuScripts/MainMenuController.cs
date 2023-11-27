@@ -9,6 +9,7 @@ public class MainMenuController : MonoBehaviour
 {
 
     public Sprite SpentLife;
+    public Sprite FullLife;
     public Image[] livesImage;
     public AudioClip audio_button_play;
     private System.Random rnd = new System.Random();
@@ -35,10 +36,14 @@ public class MainMenuController : MonoBehaviour
 	// Cambiar para hacer que lo agarre del API
 	PlayerPrefs.SetInt("total_score", PlayerPrefs.GetInt("total_score", 0));
 	PlayerPrefs.SetFloat("difficulty_multiplier", 1f);
-	UpdateLives();
+	//UpdateLives();
 
     }
 
+    private void Update()
+    {
+	UpdateLives();
+    }
     public void PlayGame()
     {
 
@@ -67,16 +72,19 @@ public class MainMenuController : MonoBehaviour
 	int lives = PlayerPrefs.GetInt("lives", 3);
 	if (lives == 3)
 	{
-
+	    livesImage[2].sprite = FullLife;
 	}
 	else if (lives == 2)
 	{
 	    livesImage[2].sprite = SpentLife;
+	    livesImage[1].sprite = FullLife;
+
 	}
 	else if (lives == 1)
 	{
 	    livesImage[2].sprite = SpentLife;
 	    livesImage[1].sprite = SpentLife;
+	    livesImage[0].sprite = FullLife;
 	}
 	else if (lives == 0)
 	{

@@ -400,6 +400,85 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e3a6197c695d834c8b2f44ea1a72052, type: 3}
+--- !u!1 &130700971
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 130700972}
+  - component: {fileID: 130700974}
+  - component: {fileID: 130700973}
+  m_Layer: 5
+  m_Name: itemNameText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &130700972
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130700971}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2049059725}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -41.59, y: 102.7}
+  m_SizeDelta: {x: 326.43, y: 54.61}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &130700973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130700971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 79cbb554cd32c22449bbd6cab1912476, type: 3}
+    m_FontSize: 30
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 3
+    m_MaxSize: 40
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: New Text
+--- !u!222 &130700974
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130700971}
+  m_CullTransparentMesh: 1
 --- !u!1 &181199364
 GameObject:
   m_ObjectHideFlags: 0
@@ -908,7 +987,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 14, y: 146}
+  m_AnchoredPosition: {x: 14, y: 153}
   m_SizeDelta: {x: 330.44, y: 76.93}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &405985901
@@ -2112,6 +2191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpentLife: {fileID: -1277401541, guid: 05799c0b5fed42536a8c8297b2ad4e03, type: 3}
+  FullLife: {fileID: -660047757, guid: 05799c0b5fed42536a8c8297b2ad4e03, type: 3}
   livesImage:
   - {fileID: 1136053008}
   - {fileID: 1253803234}
@@ -2356,16 +2436,24 @@ MonoBehaviour:
   - items:
     - item: {fileID: 3382564267756166346, guid: 9ab4949e349f7bb45b6161e4834a07e2, type: 3}
       spawnRate: 50
+      itemName: Vida
     - item: {fileID: 8379506281173590673, guid: 35ff903cecec3854fab76841cca7ec73, type: 3}
       spawnRate: 50
+      itemName: 10% descuento !
   - items:
     - item: {fileID: 7256069020744384230, guid: 4cdf19d1fe676014e87d2c1ed53c4122, type: 3}
       spawnRate: 100
+      itemName: 'Yellow Gem '
   - items:
     - item: {fileID: 8379506281173590673, guid: 35ff903cecec3854fab76841cca7ec73, type: 3}
-      spawnRate: 100
+      spawnRate: 33
+      itemName: 10% descuento !
     - item: {fileID: 3618606799475770751, guid: 1589e2ccf188f4ac582afa422ad23ca9, type: 3}
-      spawnRate: 100
+      spawnRate: 33
+      itemName: Casco
+    - item: {fileID: 3382564267756166346, guid: 9ab4949e349f7bb45b6161e4834a07e2, type: 3}
+      spawnRate: 33
+      itemName: Vida
   itemRewardPanel: {fileID: 2049059724}
 --- !u!1 &935039889
 GameObject:
@@ -3118,7 +3206,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -34, y: 61}
+  m_AnchoredPosition: {x: -41.59, y: 22.662}
   m_SizeDelta: {x: 199.37, y: 116.94}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1249765365
@@ -3701,8 +3789,8 @@ RectTransform:
   - {fileID: 1428162445}
   - {fileID: 244111281}
   - {fileID: 1729359854}
-  - {fileID: 555058669}
   - {fileID: 2049059725}
+  - {fileID: 555058669}
   - {fileID: 1819549859}
   - {fileID: 827328634}
   m_Father: {fileID: 0}
@@ -3847,7 +3935,7 @@ Transform:
   m_GameObject: {fileID: 1438520186}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -32, y: -84, z: -4676.5376}
+  m_LocalPosition: {x: -46, y: -110, z: -4676.5376}
   m_LocalScale: {x: 48.929996, y: 55.44638, z: 33.497993}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -4407,7 +4495,7 @@ Transform:
   m_GameObject: {fileID: 1604257885}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -32, y: -84, z: -4676.5376}
+  m_LocalPosition: {x: -49, y: -110, z: -4676.5376}
   m_LocalScale: {x: 48.93, y: 55.43957, z: 33.49388}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -5200,7 +5288,7 @@ Transform:
   m_GameObject: {fileID: 1888845637}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -32, y: -84, z: -4676.5376}
+  m_LocalPosition: {x: -48, y: -113, z: -4676.5376}
   m_LocalScale: {x: 48.93, y: 55.446404, z: 33.49801}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -5757,6 +5845,7 @@ RectTransform:
   - {fileID: 1888845639}
   - {fileID: 1604257887}
   - {fileID: 1438520188}
+  - {fileID: 130700972}
   m_Father: {fileID: 1420836957}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
