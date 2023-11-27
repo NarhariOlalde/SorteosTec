@@ -2354,22 +2354,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lootBoxes:
   - items:
-    - item: {fileID: 4469138528879686077, guid: af8cc39ec98dfda46b69f2c4c60f8eab, type: 3}
+    - item: {fileID: 3382564267756166346, guid: 9ab4949e349f7bb45b6161e4834a07e2, type: 3}
       spawnRate: 50
-    - item: {fileID: 1420248902614347675, guid: a9cf1188dc8800d4eb476f80b347698a, type: 3}
-      spawnRate: 30
-    - item: {fileID: 5268026660933505722, guid: dfca7499571034f0a96b163e69121590, type: 3}
-      spawnRate: 20
+    - item: {fileID: 8379506281173590673, guid: 35ff903cecec3854fab76841cca7ec73, type: 3}
+      spawnRate: 50
   - items:
     - item: {fileID: 7256069020744384230, guid: 4cdf19d1fe676014e87d2c1ed53c4122, type: 3}
       spawnRate: 100
   - items:
-    - item: {fileID: 5268026660933505722, guid: dfca7499571034f0a96b163e69121590, type: 3}
-      spawnRate: 33
-    - item: {fileID: 1420248902614347675, guid: a9cf1188dc8800d4eb476f80b347698a, type: 3}
-      spawnRate: 33
-    - item: {fileID: 7176254037791951505, guid: 5f52d3db8a6d88e44b155c0e25ca1c6f, type: 3}
-      spawnRate: 33
+    - item: {fileID: 8379506281173590673, guid: 35ff903cecec3854fab76841cca7ec73, type: 3}
+      spawnRate: 100
   itemRewardPanel: {fileID: 2049059724}
 --- !u!1 &935039889
 GameObject:

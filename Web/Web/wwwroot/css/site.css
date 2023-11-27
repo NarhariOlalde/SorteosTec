@@ -13,14 +13,17 @@ html {
     min-height: 100%;
 }
 
-body {
-    margin-bottom: 60px;
+
+#color-icon{
+    width: 30px;
+    cursor: pointer;
 }
 
 /* Variables para colores principales */
 :root {
     /*    33 52 132*/
     --color-primario: #213484; /* Color principal */
+    --color-texto-primario: #213484; /* Color principal */
     --color-secundario: #6c757d; /* Color secundario */
     --color-exito: #28a745; /* Color de éxito */
     --color-error: #dc3545; /* Color de error */
@@ -28,20 +31,46 @@ body {
     --color-informativo: #17a2b8; /* Color informativo */
     --color-claro: #f8f9fa; /* Color claro */
     --color-oscuro: #343a40; /* Color oscuro */
-
-
+    --color-fondo: #f8f9fa; /* Color de fondo */
+    --color-letra: #212529; /* Color de letra */
+    
+    
     --fuente-principal: 'Bebas Neue', sans-serif; /* Fuente principal */
     --fuente-secundaria: 'Montserrat', sans-serif; /* Fuente secundaria */
 }
 
-/* BOOTSTRAP */
-/* Fuentes*/
-h1, h2, h3, h4, h5, h6 {
-    font-family: var(--fuente-principal);
-}
+.dark-theme{
+    --color-primario: #213484; /* Color principal */
+    --color-texto-primario: #fff; /* Color principal */
+    --color-secundario: #6c757d; /* Color secundario */
+    --color-exito: #28a745; /* Color de éxito */
+    --color-error: #dc3545; /* Color de error */
+    --color-advertencia: #ffc107; /* Color de advertencia */
+    --color-informativo: #17a2b8; /* Color informativo */
+    --color-claro: #f8f9fa; /* Color claro */
+    --color-oscuro: #343a40; /* Color oscuro */
+    --color-fondo: #121212; /* Color de fondo */
+    --color-letra: #fff; /* Color de letra */
+    
+     --fuente-principal: 'Bebas Neue', sans-serif; /* Fuente principal */
+     --fuente-secundaria: 'Montserrat', sans-serif; /* Fuente secundaria */
+    }
+    
+    body {
+        margin-bottom: 60px;
+        background-color:var(--color-fondo);
+    }
 
-body, p, a, li, span, div {
+    /* BOOTSTRAP */
+    /* Fuentes*/
+    h1, h2, h3, h4, h5, h6 {
+        font-family: var(--fuente-principal);
+        color: var(--color-letra);
+    }
+    
+    body, p, a, li, span, div {
     font-family: var(--fuente-secundaria);
+    color: var(--color-letra);
 }
 
 
@@ -80,7 +109,7 @@ body, p, a, li, span, div {
 
 /* Colores de texto */
 .text-primary {
-    color: var(--color-primario) !important;
+    color: var(--color-texto-primario) !important;
 }
 
 .text-secondary {
