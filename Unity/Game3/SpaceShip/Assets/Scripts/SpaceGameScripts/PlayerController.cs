@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
 
     public GameObject bullet;
     public float moveSpeed = 5.0f; // Speed of the spaceship
+    public Button PauseButton;
+    public Button PlayButton;
 
     private void Update()
     {
@@ -25,6 +28,19 @@ public class PlayerController : MonoBehaviour
         {
             horizontalInput = 1; // Move right
         }
+
+	if (Input.GetKey(KeyCode.Space))
+	{
+		if (Time.timeScale != 1)
+		{
+		    PlayButton.onClick.Invoke();
+		}
+		else
+		{
+		    PauseButton.onClick.Invoke();
+		}
+	    
+	}
 
 	//if (Input.GetKeyDown(KeyCode.Space))
         //{

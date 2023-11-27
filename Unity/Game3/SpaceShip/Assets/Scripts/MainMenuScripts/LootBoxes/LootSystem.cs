@@ -79,6 +79,10 @@ public class LootSystem : MonoBehaviour
             rewardImage.sprite = itemToSpawn.item.GetComponent<SpriteRenderer>().sprite;
             rewardImage.preserveAspect = true;
             itemNameText.text = itemToSpawn.itemName; // Actualiza el texto con el nombre del item
+            if (itemNameText.text == "Vida")
+	    {
+		PlayerPrefs.SetInt("lives", PlayerPrefs.GetInt("lives", 3) + 1);
+	    }
             itemRewardPanel.SetActive(true);
         }
         else
