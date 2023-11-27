@@ -7,6 +7,8 @@ public class ItemToSpawn
 {
     public GameObject item;
     public float spawnRate;
+    public string itemName; 
+
 }
 
 [System.Serializable]
@@ -58,28 +60,33 @@ public class LootSystem : MonoBehaviour
             currentRate += item.spawnRate;
             if (randomPoint <= currentRate)
             {
-                // Show the item reward panel instead of instantiating the item
-                ShowItemReward(item.item);
+                // Show the item reward panel with the correct item information
+                ShowItemReward(item); // Se cambió para pasar el 'item' completo
                 break; // Stop once we've displayed the item.
             }
         }
     }
 
-    private void ShowItemReward(GameObject itemPrefab)
+
+    private void ShowItemReward(ItemToSpawn itemToSpawn)
     {
-        // Find the Image component that is named 'rewardSprite'
+        // Find the Image and Text components within 'itemRewardPanel'
         Image rewardImage = itemRewardPanel.transform.Find("rewardSprite").GetComponent<Image>();
-        if (rewardImage != null)
+        Text itemNameText = itemRewardPanel.transform.Find("itemNameText").GetComponent<Text>(); // Asume que tienes un objeto de texto con este nombre
+
+        if (rewardImage != null && itemNameText != null)
         {
-            rewardImage.sprite = itemPrefab.GetComponent<SpriteRenderer>().sprite;
-            rewardImage.preserveAspect = true; // Preserve the sprite's aspect ratio
-            itemRewardPanel.SetActive(true); // Show the panel with the item's sprite
+            rewardImage.sprite = itemToSpawn.item.GetComponent<SpriteRenderer>().sprite;
+            rewardImage.preserveAspect = true;
+            itemNameText.text = itemToSpawn.itemName; // Actualiza el texto con el nombre del item
+            itemRewardPanel.SetActive(true);
         }
         else
         {
-            Debug.LogError("rewardSprite Image not found in itemRewardPanel.");
+            Debug.LogError("Componentes necesarios no encontrados en 'itemRewardPanel'.");
         }
     }
+
 
 
     private IEnumerator HidePanelAfterDelay(GameObject panel, float delay)
