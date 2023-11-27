@@ -2445,11 +2445,14 @@ MonoBehaviour:
       itemName: 'Yellow Gem '
   - items:
     - item: {fileID: 8379506281173590673, guid: 35ff903cecec3854fab76841cca7ec73, type: 3}
-      spawnRate: 100
+      spawnRate: 33
       itemName: 10% descuento !
     - item: {fileID: 3618606799475770751, guid: 1589e2ccf188f4ac582afa422ad23ca9, type: 3}
-      spawnRate: 100
+      spawnRate: 33
       itemName: Casco
+    - item: {fileID: 3382564267756166346, guid: 9ab4949e349f7bb45b6161e4834a07e2, type: 3}
+      spawnRate: 33
+      itemName: Vida
   itemRewardPanel: {fileID: 2049059724}
 --- !u!1 &935039889
 GameObject:

@@ -22,9 +22,9 @@ public class ShopManagerScript : MonoBehaviour
         shopItems[1, 2] = 2; // ID for Loot Box 2
         shopItems[1, 3] = 3;
 
-        shopItems[2, 1] = 1; // Price for Loot Box 1
-        shopItems[2, 2] = 2; // Price for Loot Box 2
-        shopItems[2, 3] = 10000; // Price for Loot Box 3
+        shopItems[2, 1] = 10; // Price for Loot Box 1
+        shopItems[2, 2] = 100; // Price for Loot Box 2
+        shopItems[2, 3] = 1000; // Price for Loot Box 3
     }
 
     // Alguna parte de tu código que se ejecuta regularmente, como Update()
