@@ -235,7 +235,7 @@
 
                                         foreach (var edadSelect in edades)
                                         {
-                                            <option value="@edadSelect">@edad</option>
+                                            <option value="@edadSelect">@edad - x</option>
                                         }
                                     }
 
@@ -309,7 +309,7 @@
                     <div class="text-center">
                         <!-- User Image -->
                         <div class="profile">
-                            <img src="images/person.png" class="rounded-circle" width="200">
+                            <img src="images/person.png" class="rounded-circle mb-3" width="200">
                         </div>
 
                         <!-- User Info -->
@@ -332,10 +332,11 @@
                 </div>
                 <!-- Modal footer -->
                 <div class="modal-footer bg-light d-grid text-center">
+                    <a asp-area="" asp-page="/Stats"> <i class="bi bi-person-gear"></i> Estadísticas</a>
                     <!-- Admin Link -->
                     @if (esAdministrador == true)
                     {
-                        <a asp-area="" asp-page="/Admin"> <i class="bi bi-person-gear"></i> Ir al panel de administrador</a>
+                        <a asp-area="" asp-page="/Admin"> <i class="bi bi-person-gear"></i> Panel de administrador</a>
                     }
                 </div>
 

@@ -1059,6 +1059,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5246141629693850004, guid: 6e67236d2d1696468b2f471def9e0714, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5969113107262691736, guid: 6e67236d2d1696468b2f471def9e0714, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1146,6 +1150,14 @@ PrefabInstance:
       propertyPath: bounce
       value: 
       objectReference: {fileID: 8300000, guid: 4bd01c105d0d81247b79f94cd48279df, type: 3}
+    - target: {fileID: 493986640592517095, guid: 179c8827ad4be034db2b350f856536bd, type: 3}
+      propertyPath: m_Size.y
+      value: 0.38344958
+      objectReference: {fileID: 0}
+    - target: {fileID: 493986640592517095, guid: 179c8827ad4be034db2b350f856536bd, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.57378364
+      objectReference: {fileID: 0}
     - target: {fileID: 3870885411568979643, guid: 179c8827ad4be034db2b350f856536bd, type: 3}
       propertyPath: m_Name
       value: plataforma_normal
