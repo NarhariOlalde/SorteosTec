@@ -15,19 +15,18 @@ public class IndexModel : PageModel
 
     public bool Administrador { get; private set; }
 
-    private readonly ILogger<IndexModel> _logger;
+    public bool MostrarModalNoAutenticado { get; set; }
 
-    public IndexModel(ILogger<IndexModel> logger)
-    {
-        _logger = logger;
-    }
+    public bool SesionCerrada { get; private set; }
 
-    public void OnGet(bool registroExitoso = false, bool inicioSesionExitoso = false,  bool errorContraseña = false, bool errorRegistro = false)
+    public void OnGet(bool registroExitoso = false, bool inicioSesionExitoso = false, bool errorContraseña = false, bool errorRegistro = false, bool mostrarModalNoAutenticado = false, bool sesionCerrada = false)
     {
         RegistroExitoso = registroExitoso;
         InicioSesionExitoso = inicioSesionExitoso;
         ErrorContraseña = errorContraseña;
         ErrorRegistro = errorRegistro;
+        MostrarModalNoAutenticado = mostrarModalNoAutenticado;
+        SesionCerrada = sesionCerrada;
 
         Nombre = HttpContext.Session.GetString("nombre");
         Apellido = HttpContext.Session.GetString("apellido");

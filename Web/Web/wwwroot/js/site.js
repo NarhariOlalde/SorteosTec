@@ -32,6 +32,18 @@ $(document).ready(function () {
         $('#inicioSesionExitosoModal').modal('show');
     }
 
+    // Mostrar el modal de no autenticado si es necesario
+    var pageDataNoAuth = $('#page-data-no-auth');
+    if (pageDataNoAuth.length > 0 && pageDataNoAuth.data('no-auth')) {
+        $('#noAuthModal').modal('show');
+    }
+
+    // Mostrar modal de cierre de sesión exitoso
+    var pageDataSesionCerrada = $('#page-data-sesion-cerrada');
+    if (pageDataSesionCerrada.length > 0 && pageDataSesionCerrada.data('sesion-cerrada')) {
+        $('#sesionCerradaModal').modal('show');
+    }
+
     var pageDataError = $('#page-data-error');
     console.log("Error Data Length:", pageDataError.length); // Para depuración
     console.log("Error Data:", pageDataError.data('error-contraseña'));
@@ -97,21 +109,47 @@ document.getElementById('numeroTarjetaVisual').addEventListener('input', functio
 })();
 
 
-// // Dark mode
-const temaOscuro = () => {
-    document.querySelector('body').setAttribute("data-bs-theme", "dark");
-    document.querySelector("#color-icon").setAttribute("class", "text-light bi bi-sun-fill");
-}
-
-const temaClaro = () => {
-    document.querySelector('body').setAttribute("data-bs-theme", "light");
-    document.querySelector("#color-icon").setAttribute("class", "text-light bi bi-moon-fill");
-}
-
+// Función para cambiar el tema y almacenar la preferencia
 const cambiarTema = () => {
+    const body = document.querySelector('body');
+    const colorIcon = document.querySelector("#color-icon");
+    const theme = body.getAttribute("data-bs-theme");
+
+    if (theme === "light") {
+        body.setAttribute("data-bs-theme", "dark");
+        colorIcon.setAttribute("class", "text-light bi bi-sun-fill");
+        localStorage.setItem("theme", "dark");
+    } else {
+        body.setAttribute("data-bs-theme", "light");
+        colorIcon.setAttribute("class", "text-light bi bi-moon-fill");
+        localStorage.setItem("theme", "light");
+    }
+
     document.body.classList.toggle("dark-theme");
 }
 
+const cargarTema = () => {
+    const storedTheme = localStorage.getItem("theme");
+    const userPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (storedTheme) {
+        if (storedTheme === "dark") {
+            document.body.setAttribute("data-bs-theme", "dark");
+            document.querySelector("#color-icon").setAttribute("class", "text-light bi bi-sun-fill");
+            document.body.classList.add("dark-theme");
+        } else {
+            document.body.setAttribute("data-bs-theme", "light");
+            document.querySelector("#color-icon").setAttribute("class", "text-light bi bi-moon-fill");
+        }
+    } else if (userPrefersDark) {
+        document.body.setAttribute("data-bs-theme", "dark");
+        document.querySelector("#color-icon").setAttribute("class", "text-light bi bi-sun-fill");
+        document.body.classList.add("dark-theme");
+    } else {
+        document.body.setAttribute("data-bs-theme", "light");
+        document.querySelector("#color-icon").setAttribute("class", "text-light bi bi-moon-fill");
+    }
+}
 function getCookie(name){
     var cookieArr = document.cookie.split(";");
 
@@ -124,4 +162,9 @@ function getCookie(name){
     }
     return null;
 }
+
+document.addEventListener('DOMContentLoaded', cargarTema);
+
+
+
 
