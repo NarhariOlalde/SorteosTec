@@ -2,9 +2,12 @@
 @inject IHttpContextAccessor HttpContextAccessor
 
 @{
+    //Variables para cookies
     var isLoggedIn = HttpContextAccessor.HttpContext.Session.GetString("nombre") != null;
-
     var idUsuario = HttpContextAccessor.HttpContext.Session.GetInt32("id_usuario");
+    var nombreUsuario = HttpContextAccessor.HttpContext.Session.GetString("nombreUsuario");
+
+    // Resto de variables para UI
     var nombre = HttpContextAccessor.HttpContext.Session.GetString("nombre");
     var apellido = HttpContextAccessor.HttpContext.Session.GetString("apellido");
     var correo = HttpContextAccessor.HttpContext.Session.GetString("correo");
@@ -14,7 +17,30 @@
     var localizacion = HttpContextAccessor.HttpContext.Session.GetString("localizacion");
     var esAdministrador = HttpContextAccessor.HttpContext.Session.GetInt32("administrador") == 1;
 
-    var nombreUsuario = HttpContextAccessor.HttpContext.Session.GetString("nombreUsuario");
+    if (isLoggedIn)
+    {
+
+
+        // Configuración común para las cookies
+        var cookieOptions = new CookieOptions
+        {
+            Expires = DateTime.Now.AddDays(30), // Configura el tiempo de vida de la cookie
+            HttpOnly = true, // Hace la cookie accesible solo a través del HTTP
+            Secure = true, // Asegura que la cookie se envíe solo a través de HTTPS
+        };
+
+        // Crear y establecer la cookie para idUsuario
+        if (idUsuario.HasValue)
+        {
+            HttpContextAccessor.HttpContext.Response.Cookies.Append("idUsuario", idUsuario.ToString(), cookieOptions);
+        }
+
+        // Crear y establecer la cookie para nombreUsuario
+        if (!string.IsNullOrEmpty(nombreUsuario))
+        {
+            HttpContextAccessor.HttpContext.Response.Cookies.Append("nombreUsuario", nombreUsuario, cookieOptions);
+        }
+    }
 }
 
 <!DOCTYPE html>
