@@ -17,13 +17,16 @@ public class IndexModel : PageModel
 
     public bool MostrarModalNoAutenticado { get; set; }
 
-    public void OnGet(bool registroExitoso = false, bool inicioSesionExitoso = false, bool errorContraseña = false, bool errorRegistro = false, bool mostrarModalNoAutenticado = false)
+    public bool SesionCerrada { get; private set; }
+
+    public void OnGet(bool registroExitoso = false, bool inicioSesionExitoso = false, bool errorContraseña = false, bool errorRegistro = false, bool mostrarModalNoAutenticado = false, bool sesionCerrada = false)
     {
         RegistroExitoso = registroExitoso;
         InicioSesionExitoso = inicioSesionExitoso;
         ErrorContraseña = errorContraseña;
         ErrorRegistro = errorRegistro;
         MostrarModalNoAutenticado = mostrarModalNoAutenticado;
+        SesionCerrada = sesionCerrada;
 
         Nombre = HttpContext.Session.GetString("nombre");
         Apellido = HttpContext.Session.GetString("apellido");

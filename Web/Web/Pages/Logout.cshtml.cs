@@ -17,7 +17,7 @@ namespace Web.Pages
             {
                 HttpContext.Response.Cookies.Delete(cookie.Key);
             }
-            return RedirectToPage("/Index");
+            return RedirectToPage("/Index", new { sesionCerrada = true });
         }
     }
 }

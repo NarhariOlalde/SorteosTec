@@ -38,6 +38,12 @@ $(document).ready(function () {
         $('#noAuthModal').modal('show');
     }
 
+    // Mostrar modal de cierre de sesión exitoso
+    var pageDataSesionCerrada = $('#page-data-sesion-cerrada');
+    if (pageDataSesionCerrada.length > 0 && pageDataSesionCerrada.data('sesion-cerrada')) {
+        $('#sesionCerradaModal').modal('show');
+    }
+
     var pageDataError = $('#page-data-error');
     console.log("Error Data Length:", pageDataError.length); // Para depuración
     console.log("Error Data:", pageDataError.data('error-contraseña'));
@@ -146,3 +152,4 @@ const cargarTema = () => {
 }
 
 document.addEventListener('DOMContentLoaded', cargarTema);
+
