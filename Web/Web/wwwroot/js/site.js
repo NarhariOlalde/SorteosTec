@@ -111,3 +111,17 @@ const temaClaro = () => {
 const cambiarTema = () => {
     document.body.classList.toggle("dark-theme");
 }
+
+function getCookie(name){
+    var cookieArr = document.cookie.split(";");
+
+    for(var i = 0; i < cookieArr.length; i++){
+        var cookie = cookies[i].trim();
+        var cookieParts = cookie.split('=');
+        if (cookieParts[0] === name) {
+            return cookieParts[1];
+        }
+    }
+    return null;
+}
+
