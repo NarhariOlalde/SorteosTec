@@ -175,7 +175,7 @@ MonoBehaviour:
   minWidth: -8
   timeToSpawnMin: 1
   timeToSpawnMax: 1
-  YGemChance: 0.5
+  YGemChance: 0.3
   GGemChance: 0.3
   RGemChance: 0.2
   SBallChance: 0.2

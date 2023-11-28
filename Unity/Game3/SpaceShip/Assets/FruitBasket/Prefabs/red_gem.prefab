@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8514665244868217254}
   - component: {fileID: 7468549076756117440}
-  - component: {fileID: 1460466024437535755}
   - component: {fileID: 5377318717166619841}
+  - component: {fileID: 4583470118716195720}
   m_Layer: 0
   m_Name: red_gem
   m_TagString: Untagged
@@ -29,8 +29,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.16, y: 1.96, z: 0}
-  m_LocalScale: {x: 9.900449, y: 9.900449, z: 9.900449}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.24, y: 0.24, z: 0.24}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: -66226041, guid: a8b91f64b8d2b4abdb80d98a806d4b30, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 31f2f591e0fe75c47b20a69f9a7db1a3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -86,8 +86,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &1460466024437535755
-CircleCollider2D:
+--- !u!114 &5377318717166619841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4469138528879686077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3198520180254f4b90a595cae4116d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  congrats: {fileID: 8300000, guid: c1ed1b09434902f42b36fa76ceca23ee, type: 3}
+  velocity: 4
+  points: 30
+--- !u!61 &4583470118716195720
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -118,21 +133,16 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.09296751, y: 0.109787345}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5, y: 5}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.05160465
---- !u!114 &5377318717166619841
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4469138528879686077}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3198520180254f4b90a595cae4116d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  congrats: {fileID: 8300000, guid: c1ed1b09434902f42b36fa76ceca23ee, type: 3}
-  velocity: 4
-  points: 30
+  m_Size: {x: 4.132309, y: 4.165947}
+  m_EdgeRadius: 0

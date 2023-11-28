@@ -2434,26 +2434,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lootBoxes:
   - items:
-    - item: {fileID: 3382564267756166346, guid: 9ab4949e349f7bb45b6161e4834a07e2, type: 3}
-      spawnRate: 50
-      itemName: Vida
-    - item: {fileID: 8379506281173590673, guid: 35ff903cecec3854fab76841cca7ec73, type: 3}
-      spawnRate: 50
-      itemName: 10% descuento !
-  - items:
-    - item: {fileID: 7256069020744384230, guid: 4cdf19d1fe676014e87d2c1ed53c4122, type: 3}
-      spawnRate: 100
-      itemName: 'Yellow Gem '
-  - items:
+    - item: {fileID: 4762569090305025547, guid: ac783a84eaac01b48947f03d3661568a, type: 3}
+      spawnRate: 33
+      itemName: 100 puntos!
     - item: {fileID: 8379506281173590673, guid: 35ff903cecec3854fab76841cca7ec73, type: 3}
       spawnRate: 33
       itemName: 10% descuento !
+    - item: {fileID: 8379506281173590673, guid: 35ff903cecec3854fab76841cca7ec73, type: 3}
+      spawnRate: 33
+      itemName: 10% descuento !
+  - items:
+    - item: {fileID: 5385117724193991548, guid: 1309320483609d741a98feb01ff009dc, type: 3}
+      spawnRate: 33
+      itemName: 10% Mas Puntos!
+    - item: {fileID: 8633660491655255443, guid: c2c3352697b0a2748a2eae47d593422e, type: 3}
+      spawnRate: 33
+      itemName: Intenta de Nuevo :(
+    - item: {fileID: 5184336201096869511, guid: a4c4e6e635dc94547b3da895e5415b0b, type: 3}
+      spawnRate: 33
+      itemName: 1000 puntos!
+  - items:
+    - item: {fileID: 8379506281173590673, guid: 35ff903cecec3854fab76841cca7ec73, type: 3}
+      spawnRate: 33
+      itemName: 10% de descuento !
     - item: {fileID: 3618606799475770751, guid: 1589e2ccf188f4ac582afa422ad23ca9, type: 3}
       spawnRate: 33
-      itemName: Casco
+      itemName: Ganaste un Casco!
     - item: {fileID: 3382564267756166346, guid: 9ab4949e349f7bb45b6161e4834a07e2, type: 3}
       spawnRate: 33
-      itemName: Vida
+      itemName: Ganaste una Vida!
   itemRewardPanel: {fileID: 2049059724}
 --- !u!1 &935039889
 GameObject:
