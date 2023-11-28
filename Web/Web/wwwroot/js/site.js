@@ -32,6 +32,12 @@ $(document).ready(function () {
         $('#inicioSesionExitosoModal').modal('show');
     }
 
+    // Mostrar el modal de no autenticado si es necesario
+    var pageDataNoAuth = $('#page-data-no-auth');
+    if (pageDataNoAuth.length > 0 && pageDataNoAuth.data('no-auth')) {
+        $('#noAuthModal').modal('show');
+    }
+
     var pageDataError = $('#page-data-error');
     console.log("Error Data Length:", pageDataError.length); // Para depuración
     console.log("Error Data:", pageDataError.data('error-contraseña'));
