@@ -83,6 +83,14 @@ public class LootSystem : MonoBehaviour
 	    {
 		PlayerPrefs.SetInt("lives", PlayerPrefs.GetInt("lives", 3) + 1);
 	    }
+	    else if (itemNameText.text == "1000 puntos!")
+	    {
+		PlayerPrefs.SetInt("total_score", PlayerPrefs.GetInt("total_score", 0) + 1000);
+	    }
+	    else if (itemNameText.text == "100 puntos!")
+	    {
+		PlayerPrefs.SetInt("total_score", PlayerPrefs.GetInt("total_score", 0) + 100);
+	    }
             itemRewardPanel.SetActive(true);
         }
         else

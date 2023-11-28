@@ -13,9 +13,6 @@ public class ShopManagerScript : MonoBehaviour
 
     void Start()
     {
-        // Initialize coins and update UI
-        coins = PlayerPrefs.GetInt("total_score", 0);
-        CoinsTXT.text = "Puntos: " + coins.ToString();
 
         // Initialize shop items (ID and price for two loot boxes)
         shopItems[1, 1] = 1; // ID for Loot Box 1
@@ -30,6 +27,9 @@ public class ShopManagerScript : MonoBehaviour
     // Alguna parte de tu código que se ejecuta regularmente, como Update()
     void Update()
     {
+        // Initialize coins and update UI
+        coins = PlayerPrefs.GetInt("total_score", 0);
+        CoinsTXT.text = "Puntos: " + coins.ToString();
         // Este es solo un ejemplo, necesitarás adaptarlo para que funcione con tu sistema específico.
         for (int i = 1; i <= shopItems.GetLength(1); i++)
         {
