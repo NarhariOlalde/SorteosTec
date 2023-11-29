@@ -33,11 +33,13 @@ DROP TABLE IF EXISTS `Microtransaccion`;
 CREATE TABLE `Microtransaccion` (
   `id_usuario` int DEFAULT NULL,
   `id_transaccion` int NOT NULL AUTO_INCREMENT,
-  `compra` text,
+  `id_producto` int DEFAULT NULL,
   `costo` int DEFAULT NULL,
   PRIMARY KEY (`id_transaccion`),
   KEY `id_usuario` (`id_usuario`),
-  CONSTRAINT `microtransaccion_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `Usuario` (`id_usuario`)
+  KEY `id_producto` (`id_producto`),
+  CONSTRAINT `microtransaccion_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `Usuario` (`id_usuario`),
+  CONSTRAINT `microtransaccion_ibfk_2` FOREIGN KEY (`id_producto`) REFERENCES `Productos` (`id_producto`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -51,28 +53,26 @@ LOCK TABLES `Microtransaccion` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `Puntuacion`
+-- Table structure for table `Productos`
 --
 
-DROP TABLE IF EXISTS `Puntuacion`;
+DROP TABLE IF EXISTS `Productos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `Puntuacion` (
-  `id_usuario` int DEFAULT NULL,
-  `puntuacion_juego` int NOT NULL,
-  PRIMARY KEY (`puntuacion_juego`),
-  KEY `id_usuario` (`id_usuario`),
-  CONSTRAINT `puntuacion_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `Usuario` (`id_usuario`)
+CREATE TABLE `Productos` (
+  `id_producto` int NOT NULL AUTO_INCREMENT,
+  `descripcion` text,
+  PRIMARY KEY (`id_producto`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Puntuacion`
+-- Dumping data for table `Productos`
 --
 
-LOCK TABLES `Puntuacion` WRITE;
-/*!40000 ALTER TABLE `Puntuacion` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Puntuacion` ENABLE KEYS */;
+LOCK TABLES `Productos` WRITE;
+/*!40000 ALTER TABLE `Productos` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Productos` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -108,14 +108,11 @@ DROP TABLE IF EXISTS `UserGame`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `UserGame` (
   `id_usuario` int DEFAULT NULL,
-  `puntuacion_juego` int DEFAULT NULL,
+  `puntuacion_maxima` int DEFAULT NULL,
   `tiempo_jugado` int DEFAULT NULL,
-  `llaves_obtenidas` int DEFAULT NULL,
-  `premios` text,
+  `inventario` text,
   KEY `id_usuario` (`id_usuario`),
-  KEY `puntuacion_juego` (`puntuacion_juego`),
-  CONSTRAINT `usergame_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `Usuario` (`id_usuario`),
-  CONSTRAINT `usergame_ibfk_2` FOREIGN KEY (`puntuacion_juego`) REFERENCES `Puntuacion` (`puntuacion_juego`)
+  CONSTRAINT `usergame_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `Usuario` (`id_usuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -170,7 +167,7 @@ CREATE TABLE `Usuario` (
   `sexo` text,
   `edad` int DEFAULT NULL,
   `localizacion` text,
-  `administrador` tinyint(1) DEFAULT '0',
+  `administrador` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id_usuario`)
 ) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -194,4 +191,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-11-23 14:03:17
+-- Dump completed on 2023-11-29  1:02:35

@@ -4,7 +4,6 @@ CREATE TABLE `Usuario` (
   `apellido` text,
   `correo` text,
   `datos_bancarios` text,
-  `genero` text,
   `sexo` text,
   `edad` int,
   `localizacion` text,
