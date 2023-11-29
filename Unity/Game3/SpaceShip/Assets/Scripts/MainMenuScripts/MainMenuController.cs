@@ -37,6 +37,12 @@ public class MainMenuController : MonoBehaviour
 	// Cambiar para hacer que lo agarre del API
 	PlayerPrefs.SetInt("total_score", PlayerPrefs.GetInt("total_score", 0));
 	PlayerPrefs.SetFloat("difficulty_multiplier", 1f);
+	if (PlayerPrefs.GetString("last_log", "") != DateTime.Now.ToString("yyyy-MM-dd"))
+	{
+	    Debug.Log("New day, setting lives to 3.");
+	    PlayerPrefs.SetString("last_log", DateTime.Now.ToString("yyyy-MM-dd"));
+            PlayerPrefs.SetInt("lives",  3);
+	}
 	//UpdateLives();
 
     }
