@@ -4,6 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using JetBrains.Annotations;
+using UnityEngine.Networking;
+using System.Text;
+using System.Runtime.InteropServices;
+using System;
 
 public class GameOverUIController : MonoBehaviour
 {
@@ -16,10 +20,12 @@ public class GameOverUIController : MonoBehaviour
     public Sprite SpentLife;
     public Image[] livesImage;
 	public AudioClip musicamenu2;
+    public string JSONurl = "http://localhost:3100/api/updateMaxScore";
 
     // Start is called before the first frame update
     void Start()
     {
+        
 	// DEBUG LINES, DELETE LATER
 	//PlayerPrefs.SetInt("lives", 3);
 	//animator.SetTrigger("FadeLife3");
@@ -38,15 +44,78 @@ public class GameOverUIController : MonoBehaviour
         puntajeFinal.text = "PUNTOS TOTALES: " + currentScore.ToString();
         PlayerPrefs.SetInt("score", 0);
         PlayerPrefs.SetInt("lives", PlayerPrefs.GetInt("lives", 3) - 1);
-	FadeLives();
+	    FadeLives();
+        try
+        {
+            string cookieName = "idUsuario";
+            IntPtr cookiePtr = getCookie(cookieName);
+            string cookieValue = Marshal.PtrToStringAnsi(cookiePtr);
+            SaveMaxScore(int.Parse(cookieValue), currentScore);
+        }
+        catch (Exception e)
+        {
+            Debug.LogError("Error getting cookie: " + e.Message);
+        }
 
     }
+
+    [DllImport("__Internal")]
+    private static extern IntPtr getCookie(string name);
+
 
     // Update is called once per frame
     void Update()
     {
 
     }
+
+	public void SaveMaxScore(int cookieValue, int currentScore)
+	{
+        StartCoroutine(SendMaxScoreToServer(cookieValue, currentScore));
+
+	}   
+
+    IEnumerator SendMaxScoreToServer(int userId, int score)
+    {
+        string url = JSONurl;
+
+        // Create a simple data structure and serialize it to JSON
+        string jsonData = JsonUtility.ToJson(new ScoreData(userId, score));
+        Debug.Log("JSON data: " + jsonData);
+
+        UnityWebRequest request = new UnityWebRequest(url, "POST");
+        byte[] bodyRaw = Encoding.UTF8.GetBytes(jsonData);
+        request.uploadHandler = (UploadHandler)new UploadHandlerRaw(bodyRaw);
+        request.downloadHandler = (DownloadHandler)new DownloadHandlerBuffer();
+        request.SetRequestHeader("Content-Type", "application/json");
+
+        yield return request.SendWebRequest();
+
+        if (request.result != UnityWebRequest.Result.Success)
+        {
+            Debug.LogError("Error: " + request.error);
+        }
+        else
+        {
+            Debug.Log("Max score saved successfully");
+        }
+    }
+
+    // Data structure to hold user ID and score
+    [System.Serializable]
+    private class ScoreData
+    {
+        public int id_usuario;
+        public int puntuacion_maxima;
+
+        public ScoreData(int userId, int maxScore)
+        {
+            this.id_usuario = userId;
+            this.puntuacion_maxima = maxScore;
+        }
+    }
+
+
 
     public void GoHome()
     {

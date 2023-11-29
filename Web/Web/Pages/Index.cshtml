@@ -15,7 +15,7 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header bg-success text-white">
-                    <h3 class="modal-title" id="loginModalLabel">¡Bienvenido @Model.Nombre!</h3>
+                    <h3 class="modal-title text-light" id="loginModalLabel">¡Bienvenido @Model.Nombre!</h3>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -38,7 +38,7 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header bg-success text-white">
-                    <h3 class="modal-title" id="loginModalLabel">¡Bienvenido @Model.Nombre!</h3>
+                    <h3 class="modal-title text-light" id="loginModalLabel">¡Bienvenido @Model.Nombre!</h3>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -50,6 +50,25 @@
     </div>
 }
 
+@if (Model.SesionCerrada)
+{
+    <div id="page-data-sesion-cerrada" data-sesion-cerrada="true"></div>
+
+    <!-- Modal de Sesión Cerrada -->
+    <div class="modal fade" id="sesionCerradaModal" tabindex="-1" aria-labelledby="sesionCerradaModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h3 class="modal-title text-light" id="sesionCerradaModalLabel">Sesión Cerrada</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Has cerrado sesión correctamente.
+                </div>
+            </div>
+        </div>
+    </div>
+}
 
 @if (Model.ErrorContraseña)
 {
@@ -82,8 +101,8 @@
     <div class="modal fade" id="noAuthModal" tabindex="-1" aria-labelledby="noAuthModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <div class="modal-header bg-warning text-white">
-                    <h3 class="modal-title" id="noAuthModalLabel">Acceso Restringido</h3>
+                <div class="modal-header bg-danger text-white">
+                    <h3 class="modal-title text-light" id="noAuthModalLabel">Acceso restringido</h3>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">

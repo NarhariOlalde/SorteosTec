@@ -1,7 +1,3 @@
-create database sorteostec;
-
-use sorteostec;
-
 CREATE TABLE `Usuario` (
   `id_usuario` integer PRIMARY KEY AUTO_INCREMENT,
   `nombre` text,
@@ -23,10 +19,9 @@ CREATE TABLE `UserName` (
 
 CREATE TABLE `UserGame` (
   `id_usuario` int,
-  `puntuacion_juego` int,
+  `puntuacion_maxima` int,
   `tiempo_jugado` int,
-  `llaves_obtenidas` int,
-  `premios` text
+  `inventario` text
 );
 
 CREATE TABLE `Referrals` (
@@ -37,8 +32,13 @@ CREATE TABLE `Referrals` (
 CREATE TABLE `Microtransaccion` (
   `id_usuario` int,
   `id_transaccion` int PRIMARY KEY AUTO_INCREMENT,
-  `compra` text,
+  `id_producto` int,
   `costo` int
+);
+
+CREATE TABLE `Productos` (
+  `id_producto` int PRIMARY KEY AUTO_INCREMENT,
+  `descripcion` text
 );
 
 ALTER TABLE `UserName` ADD FOREIGN KEY (`id_usuario`) REFERENCES `Usuario` (`id_usuario`);
@@ -48,3 +48,5 @@ ALTER TABLE `UserGame` ADD FOREIGN KEY (`id_usuario`) REFERENCES `Usuario` (`id_
 ALTER TABLE `Referrals` ADD FOREIGN KEY (`id_usuario`) REFERENCES `Usuario` (`id_usuario`);
 
 ALTER TABLE `Microtransaccion` ADD FOREIGN KEY (`id_usuario`) REFERENCES `Usuario` (`id_usuario`);
+
+ALTER TABLE `Microtransaccion` ADD FOREIGN KEY (`id_producto`) REFERENCES `Productos` (`id_producto`);

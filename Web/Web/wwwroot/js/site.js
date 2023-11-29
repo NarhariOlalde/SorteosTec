@@ -38,6 +38,12 @@ $(document).ready(function () {
         $('#noAuthModal').modal('show');
     }
 
+    // Mostrar modal de cierre de sesión exitoso
+    var pageDataSesionCerrada = $('#page-data-sesion-cerrada');
+    if (pageDataSesionCerrada.length > 0 && pageDataSesionCerrada.data('sesion-cerrada')) {
+        $('#sesionCerradaModal').modal('show');
+    }
+
     var pageDataError = $('#page-data-error');
     console.log("Error Data Length:", pageDataError.length); // Para depuración
     console.log("Error Data:", pageDataError.data('error-contraseña'));
@@ -144,5 +150,21 @@ const cargarTema = () => {
         document.querySelector("#color-icon").setAttribute("class", "text-light bi bi-moon-fill");
     }
 }
+function getCookie(name){
+    var cookieArr = document.cookie.split(";");
+
+    for(var i = 0; i < cookieArr.length; i++){
+        var cookie = cookies[i].trim();
+        var cookieParts = cookie.split('=');
+        if (cookieParts[0] === name) {
+            return cookieParts[1];
+        }
+    }
+    return null;
+}
 
 document.addEventListener('DOMContentLoaded', cargarTema);
+
+
+
+
