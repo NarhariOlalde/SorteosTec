@@ -23,8 +23,8 @@
         var cookieOptions = new CookieOptions
         {
             Expires = DateTime.Now.AddDays(30), // Configura el tiempo de vida de la cookie
-            HttpOnly = true, // Hace la cookie accesible solo a través del HTTP
-            Secure = true, // Asegura que la cookie se envíe solo a través de HTTPS
+            HttpOnly = false, // Hace la cookie accesible solo a través del HTTP
+            Secure = false, // Asegura que la cookie se envíe solo a través de HTTPS
         };
 
         // Crear y establecer la cookie para idUsuario
