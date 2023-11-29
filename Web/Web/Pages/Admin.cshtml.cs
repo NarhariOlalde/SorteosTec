@@ -79,7 +79,7 @@ public class AdminModel : PageModel
             }
 
             // Obtener máxima puntuación
-            using (var scoreCommand = new MySqlCommand("SELECT MAX(puntuacion_juego) FROM UserGame", connection))
+            using (var scoreCommand = new MySqlCommand("SELECT MAX(puntuacion_maxima) FROM UserGame", connection))
             using (var scoreReader = await scoreCommand.ExecuteReaderAsync())
             {
                 if (await scoreReader.ReadAsync())
