@@ -245,7 +245,7 @@ Transform:
   m_GameObject: {fileID: 31107839}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.8996568, y: 2.6088161, z: -0.0056362697}
+  m_LocalPosition: {x: 10.59, y: 2.6088161, z: -0.0056362697}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -349,7 +349,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6295115526418468192, guid: 9e3a6197c695d834c8b2f44ea1a72052, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.8996568
+      value: 10.59
       objectReference: {fileID: 0}
     - target: {fileID: 6295115526418468192, guid: 9e3a6197c695d834c8b2f44ea1a72052, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2437,9 +2437,9 @@ MonoBehaviour:
     - item: {fileID: 4762569090305025547, guid: ac783a84eaac01b48947f03d3661568a, type: 3}
       spawnRate: 33
       itemName: 100 puntos!
-    - item: {fileID: 8379506281173590673, guid: 35ff903cecec3854fab76841cca7ec73, type: 3}
+    - item: {fileID: 4762569090305025547, guid: ac783a84eaac01b48947f03d3661568a, type: 3}
       spawnRate: 33
-      itemName: 10% descuento !
+      itemName: 100 puntos!
     - item: {fileID: 8379506281173590673, guid: 35ff903cecec3854fab76841cca7ec73, type: 3}
       spawnRate: 33
       itemName: 10% descuento !
