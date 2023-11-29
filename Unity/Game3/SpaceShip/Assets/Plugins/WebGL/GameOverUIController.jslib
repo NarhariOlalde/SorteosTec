@@ -1,8 +1,6 @@
 mergeInto(LibraryManager.library, {
   getCookie: function (namePtr) {
     var name = UTF8ToString(namePtr);
-    console.log("Searching for cookie: " + name);
-    console.log("All cookies: " + document.cookie);
     var value = "; " + document.cookie;
     var parts = value.split("; " + name + "=");
     if (parts.length == 2) {

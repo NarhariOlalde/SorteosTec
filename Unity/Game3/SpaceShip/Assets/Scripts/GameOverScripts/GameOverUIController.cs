@@ -49,17 +49,8 @@ public class GameOverUIController : MonoBehaviour
         {
             string cookieName = "idUsuario";
             IntPtr cookiePtr = getCookie(cookieName);
-
-            if (cookiePtr != IntPtr.Zero)
-            {
-                string cookieValue = Marshal.PtrToStringAnsi(cookiePtr);
-                Debug.Log("Cookie Value: " + cookieValue);
-                SaveMaxScore(int.Parse(cookieValue), currentScore);
-            }
-            else
-            {
-                Debug.Log("Cookie not found or empty");
-            }
+            string cookieValue = Marshal.PtrToStringAnsi(cookiePtr);
+            SaveMaxScore(int.Parse(cookieValue), currentScore);
         }
         catch (Exception e)
         {
