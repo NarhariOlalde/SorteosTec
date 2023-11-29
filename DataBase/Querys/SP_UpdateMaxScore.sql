@@ -1,6 +1,6 @@
 DELIMITER //
 
-CREATE PROCEDURE UpdateMaxScoreIfHigher(
+CREATE PROCEDURE UpdateMaxScore(
     IN _id_usuario INT,
     IN _new_puntuacion_maxima INT
 )
