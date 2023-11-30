@@ -11,27 +11,27 @@
         <div class="col-md-8">
             <table class="table table-sm table-striped table-hover caption-top table table-bordered">
                 <caption class="text-center">Top mejores puntuaciones globales</caption>
-                <thead class="table-primary">
+                <thead class="table-primary text-light">
                     <tr>
-                        <th scope="col">Posición</th>
-                        <th scope="col">Nombre de usuario</th>
-                        <th scope="col">Puntuación</th>
+                        <th class="text-light" scope="col">Posición</th>
+                        <th class="text-light" scope="col">Nombre de usuario</th>
+                        <th class="text-light" scope="col">Puntuación</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <th scope="row">1</th>
-                        <td>@@CarlosDC</td>
+                        <th class="text-light" scope="row">1</th>
+                        <td>@@CarlosDC32</td>
                         <td>453,123</td>
                     </tr>
                     <tr>
-                        <th scope="row">2</th>
-                        <td>@@SofiaCD</td>
+                        <th class="text-light" scope="row">2</th>
+                        <td>@@SofiaCD4</td>
                         <td>345,214</td>
                     </tr>
                     <tr>
-                        <th scope="row">3</th>
-                        <td>@@MariaDG</td>
+                        <th class="text-light" scope="row">3</th>
+                        <td>@@MariaDG76</td>
                         <td>336,185</td>
                     </tr>
                 </tbody>
@@ -41,31 +41,25 @@
             <div class="financial-card mb-2 flex-grow-1 d-flex align-items-center justify-content-center">
                 <div>
                     <small class="text-light">Mi puntuación</small>
-                    <h2 class="text-light">1000 puntos</h2>
+                    <h2 class="text-light">@Model.UserScore puntos</h2>
                 </div>
             </div>
-            @* <div class="col-md-4 d-flex align-items-center">
-            <div class="financial-card w-100">
-            <small>Mi puntuación </small>
-            <h2>1000 puntos</h2>
-            </div>
-            </div> *@
         </div>
     </div>
     <div class="row">
-    <div class="col-md-6 my-2">
-        <div class="financial-card h-100 d-flex flex-column justify-content-between">
-            <small>Mis referidos</small>
-            <h2 class="text-light">3 referidos totales</h2>
+        <div class="col-md-6 my-2">
+            <div class="financial-card h-100 d-flex flex-column justify-content-between">
+                <small>Mis referidos</small>
+                <h2 class="text-light">0 referidos totales</h2>
+            </div>
+        </div>
+        <div class="col-md-6 my-2">
+            <div class="financial-card h-100 d-flex flex-column justify-content-between">
+                <small>Tiempo jugado</small>
+                <h2 class="text-light">@Model.PlayedTime minutos</h2>
+            </div>
         </div>
     </div>
-    <div class="col-md-6 my-2">
-        <div class="financial-card h-100 d-flex flex-column justify-content-between">
-            <small>Inventario</small>
-            <h2 class="text-light">15 objetos obtenidos</h2>
-        </div>
-    </div>
-</div>
 
     <div class="row my-2">
         <div class="col">
@@ -73,27 +67,27 @@
                 <caption class="text-center">Mis transacciones</caption>
                 <thead class="table-primary">
                     <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Concepto</th>
-                        <th scope="col">Costo</th>
+                        <th class="text-light" scope="col">ID</th>
+                        <th class="text-light" scope="col">Concepto</th>
+                        <th class="text-light" scope="col">Costo</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Skin borregos football</td>
-                        <td>$25 MXN</td>
+                    @* <tr>
+                    <th scope="row">1</th>
+                    <td>Skin borregos football</td>
+                    <td>$25 MXN</td>
                     </tr>
                     <tr>
-                        <th scope="row">2</th>
-                        <td>Mapa Banorte</td>
-                        <td>$35 MXN</td>
+                    <th scope="row">2</th>
+                    <td>Mapa Banorte</td>
+                    <td>$35 MXN</td>
                     </tr>
                     <tr>
-                        <th scope="row">3</th>
-                        <td>Vida extra</td>
-                        <td>$10 MXN</td>
-                    </tr>
+                    <th scope="row">3</th>
+                    <td>Vida extra</td>
+                    <td>$10 MXN</td>
+                    </tr> *@
                 </tbody>
             </table>
         </div>
